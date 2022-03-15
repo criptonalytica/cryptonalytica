@@ -1,10 +1,18 @@
 <template>
-    <div class="container">
+    <div>
+         <header>
+          <nav>
+              <div class="menu-item"><NuxtLink to="#">Home</NuxtLink></div>
+              <div class="menu-item"><NuxtLink to="chart">Primeiro Turno</NuxtLink></div>
+              <div class="menu-item"><NuxtLink to="segundoturno">Segundo Turno</NuxtLink></div>
+          </nav>
+      </header>
+      <div class="container">
         <h1>Eleições do segundo turno</h1>
         <div id="link">
             <LineChart id="bar-chart" :chartData="chartData" :options="chartOptions" />
-            <p><NuxtLink to="chart"> Clique aqui</NuxtLink> para conferir os votos no primeiro turno </p>
         </div>
+      </div>
     </div>
 </template>
 
@@ -60,8 +68,36 @@ export default
         display: flex;
         justify-content: space-between;    
     }
-    p{
-        margin-top: 250px;
+    
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav .menu-item.active, nav .menu-item:hover {
+        background-color: #444;
+        border-bottom-color: coral;
+    }
+
+    nav .menu-item {
+        color: #fff;
+        padding: 10px 20px;
+        position: relative;
+        text-align: center;
+        border-bottom: 3px solid transparent;
+        display: flex;
+        transition: 0.4s;
+    }
+    
+    nav .menu-item:nth-child(2) {
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    nav .menu-item a {
+        color: inherit;
+        text-decoration: none;
     }
 
 </style>
