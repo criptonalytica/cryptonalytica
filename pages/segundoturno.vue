@@ -1,29 +1,30 @@
 <template>
-  <div class="chart-div container">
-        <h1>Eleições 2022</h1>
-    <div id="link">
-        <BarChart id="bar-chart" :chartData="chartData" :options="chartOptions" />
-        <p><NuxtLink to="segundoturno"> Clique aqui</NuxtLink> para conferir as eleições no segundo turno</p>
+    <div class="container">
+        <h1>Eleições do segundo turno</h1>
+        <div id="link">
+            <LineChart id="bar-chart" :chartData="chartData" :options="chartOptions" />
+            <p><NuxtLink to="chart"> Clique aqui</NuxtLink> para conferir os votos no primeiro turno </p>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-import { Tooltip } from 'chart.js'
-import BarChart from '../components/BarChart.vue'
-export default { 
+import LineChart from '../components/LineChart.vue' //não sei pq mas ta ficando vermelho como se fosse erro, mas ta funcionando
+
+export default 
+    { 
     data() {
         return {
             chartData: {
-                labels:["Lula", "Ciro Gomes", "Bolsonaro", "Thomas"],
+                labels:["13h", "14h", "15h", "16h", "17h"],
                 datasets: [
                     {
-                        label :"Quantidade de votos",
-                        borderColor: "black",
-                        backgroundColor:"black",
+                        label :"Quantidade de votos por hora",
+                        backgroundColor: "blue",
+                        borderColor: "blue",
                         borderWidth: 3,
-                        // fill: false,
-                        data: [49,20, 3, 28 ]
+                        fill: false,
+                        data: [8, 11, 37, 63, 50, 36]
 
                     },
                 ]
@@ -34,25 +35,21 @@ export default {
         }
     }
 }
+
 </script>
 
 <style>
     * {margin: 0; padding: 0;
       box-sizing: border-box;
     }
-    
     body {font-family: 'Open Sans', sans-serif;}
-    
     .container {
     max-width: 1200px;
     margin: auto;
     }
-
     h1{
         color: coral;
         text-align: center;
-        margin-top: 30;
-
     }
     #bar-chart {
         color: aqua;
@@ -66,5 +63,5 @@ export default {
     p{
         margin-top: 250px;
     }
-    
+
 </style>
