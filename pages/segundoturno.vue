@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import LineChart from '../components/LineChart.vue' //não sei pq mas ta ficando vermelho como se fosse erro, mas ta funcionando
+//import LineChart from '../components/LineChart.vue' //não sei pq mas ta ficando vermelho como se fosse erro, mas ta funcionando
 
 export default 
     { 
