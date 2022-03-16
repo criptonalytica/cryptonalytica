@@ -10,35 +10,32 @@
       <div class="container">
         <h1>Eleições do segundo turno</h1>
         <div id="link">
-            <LineChart id="bar-chart" :chartData="chartData" :options="chartOptions" />
+            <LineChart :ChartData="ChartData"/>
         </div>
       </div>
     </div>
 </template>
 
 <script>
-//import LineChart from '../components/LineChart.vue' //não sei pq mas ta ficando vermelho como se fosse erro, mas ta funcionando
+import { Tooltip } from 'chart.js'
+import LineChart from '../components/LineChart.vue'
 
 export default 
     { 
     data() {
         return {
-            chartData: {
+            ChartData: {
                 labels:["13h", "14h", "15h", "16h", "17h"],
                 datasets: [
                     {
-                        label :"Quantidade de votos por hora",
-                        backgroundColor: "blue",
-                        borderColor: "blue",
-                        borderWidth: 3,
-                        fill: false,
-                        data: [8, 11, 37, 63, 50, 36]
-
+                    label :"Quantidade de votos por hora",
+                    data: [8, 11, 37, 63, 50, 36],
+                    backgroundColor: "blue",
+                    borderColor: "blue",
+                    borderWidth: 3,
+                    fill: false,
                     },
                 ]
-            },
-            chartOptions: {
-                responsive: true
             }
         }
     }
