@@ -5,26 +5,28 @@
               <div class="menu-item"><NuxtLink to="#">Home</NuxtLink></div>
               <div class="menu-item"><NuxtLink to="chart">Primeiro Turno</NuxtLink></div>
               <div class="menu-item"><NuxtLink to="segundoturno">Segundo Turno</NuxtLink></div>
+              <div class="menu-item"><NuxtLink to="coinTable">Coin Table</NuxtLink></div>
           </nav>
       </header>
       <div class="container">
         <h1>Eleições do segundo turno</h1>
         <div id="link">
-            <LineChart :ChartData="ChartData"/>
+            <LineChart :chartData="ChData"/>
         </div>
       </div>
     </div>
 </template>
 
 <script>
-import { Tooltip } from 'chart.js'
 import LineChart from '../components/LineChart.vue'
 
-export default 
-    { 
+export default {
+    components: {
+        LineChart
+    },
     data() {
         return {
-            ChartData: {
+            ChData: {
                 labels:["13h", "14h", "15h", "16h", "17h"],
                 datasets: [
                     {

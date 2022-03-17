@@ -5,24 +5,27 @@
               <div class="menu-item"><NuxtLink to="#">Home</NuxtLink></div>
               <div class="menu-item"><NuxtLink to="chart">Primeiro Turno</NuxtLink></div>
               <div class="menu-item"><NuxtLink to="segundoturno">Segundo Turno</NuxtLink></div>
+              <div class="menu-item"><NuxtLink to="coinTable">Coin Table</NuxtLink></div>
           </nav>
       </header>
     <div class="container">
         <h1>Eleições 2022</h1>
         <div id="link">
-            <BarChart id="bar-chart" :chartData="chartData" :options="chartOptions" />
+            <BarChart id="bar-chart" :chartData="barData" :options="chartOptions" />
         </div>
     </div>
   </div>
 </template>
 
 <script>
-import { Tooltip } from 'chart.js'
 import BarChart from '../components/BarChart.vue'
 export default { 
+    components: {
+        BarChart
+    },
     data() {
         return {
-            chartData: {
+            barData: {
                 labels:["Lula", "Ciro Gomes", "Bolsonaro", "Thomas"],
                 datasets: [
                     {
@@ -40,7 +43,7 @@ export default {
                 responsive: true
             }
         }
-    }
+    },
 }
 </script>
 
