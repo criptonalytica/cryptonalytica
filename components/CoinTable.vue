@@ -1,5 +1,6 @@
 <template>
-    <sorted-table >  <!-- ascIcon="<span> ▲</span>"  descIcon="<span> ▼</span>"  ||   tem isso também :tableData="tableData" -->
+<div>
+    <table>  <!--    <sorted-table>    ------    ascIcon="<span> ▲</span>"  descIcon="<span> ▼</span>"  ||   tem isso também :tableData="tableData" -->
               <thead>
                   <tr >
                       <th scope="col">
@@ -25,7 +26,8 @@
                       <th scope="row">{{ client.percent }}</th>
                   </tr>
               </tbody>
-          </sorted-table>
+          </table>  <!-- </sorted-table>  mas não funcionou-->
+</div>
 </template>
 
 <script>
@@ -66,6 +68,10 @@ export default {
 </script>
 
 <style scoped>
+    div {
+        display: flex;
+        justify-content: center;
+    }
     table, th{
         border: 1px solid #000;
     }
@@ -75,10 +81,7 @@ export default {
         table-layout: fixed;
         border-collapse: collapse;
     }
-    #head {
-        border: bold;
-    }
-    td, th {
+     th {
         height: 35px;
         vertical-align: middle;
         text-align: center;
