@@ -4,7 +4,7 @@
               <div class="menu-item"><NuxtLink to="#">Home</NuxtLink></div>
               <div class="menu-item"><NuxtLink to="chart">Primeiro Turno</NuxtLink></div>
               <div class="menu-item"><NuxtLink to="segundoturno">Segundo Turno</NuxtLink></div>
-              <div class="menu-item"><NuxtLink to="coinTable">Coin Table</NuxtLink></div>
+              <div class="menu-item"><NuxtLink to="TablePage">Coin Table</NuxtLink></div>
           </nav>
       </header>
 </template>
