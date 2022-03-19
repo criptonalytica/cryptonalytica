@@ -1,6 +1,6 @@
 <template>
     <div id="searchInput">
-        <input type="text" v-model="search" placeholder="Digite aqui...">
+        <!-- <input type="text" v-model="search" placeholder="Digite aqui..."> -->
         <div id="content">
             <sorted-table id="table" ascIcon="<span>▲</span>"  descIcon="<span>▼</span>" :values="values"> 
                     <thead>
@@ -22,7 +22,7 @@
                     </thead>
                     <template #body="sort">
                         <tbody>
-                            <!-- pra pesquisa funcionar precisa substituis o value pela função  filteredClients -->
+                            <!--#body="sort -- pra pesquisa funcionar precisa substituis o value pela função filteredClients  -->
                             <tr v-for="client in sort.values" :key="client.name">
                                 <td scope="row">{{ client.name | to-uppercase }}</td>
                                 <td scope="row">{{ client.last | to-uppercase }}</td>
@@ -77,13 +77,14 @@ export default {
             default: () => {}
         }
     },
-    computed: {
-        filteredClients: function(){
-            return this.values.filter((client) => {
-                return client.name.match(this.search)
-            });
-        }
-    }
+    // função de pesquisa 
+    // computed: {
+    //     filteredClients: function(){
+    //         return this.values.filter((client) => {
+    //             return client.name.match(this.search)
+    //         });
+    //     }
+    // }
 }
 </script>
 
