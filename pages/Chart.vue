@@ -1,6 +1,6 @@
 <template>
   <div>
-      <Menu/>
+      <Header/>
     <div class="container">
         <h1>Eleições 2022</h1>
         <div id="link">
@@ -12,12 +12,12 @@
 
 <script>
 import BarChart from '../components/BarChart.vue'
-import Menu from '../components/Menu.vue'
+import Header from '../components/Header.vue'
 
 export default { 
     components: {
         BarChart,
-        Menu
+        Header
     },
     data() {
         return {
@@ -43,32 +43,6 @@ export default {
 }
 </script>
 
-<style >
-    * {margin: 0; padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {font-family: 'Open Sans', sans-serif;}
-    
-    .container {
-        max-width: 1200px;
-        margin: auto;
-    }
-    
-     h1{
-        color: coral;
-        text-align: center;
-        margin-top: 30;
-
-    }
-    #bar-chart {
-        color: aqua;
-        width: 40vw;
-        height: 20vh;
-    }
-    #link{
-        display: flex;
-        justify-content: space-between;    
-    }
+<style>
 
 </style>

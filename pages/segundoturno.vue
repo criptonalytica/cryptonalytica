@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Menu />
+        <Header />
         <div class="container">
         <h1>Eleições do segundo turno</h1>
         <div id="link">
@@ -12,12 +12,12 @@
 
 <script>
 import LineChart from '../components/LineChart.vue'
-import Menu from '../components/Menu.vue'
+import Header from '../components/Header.vue'
 
 export default {
     components: {
         LineChart,
-        Menu
+        Header
     },
     data() {
         return {

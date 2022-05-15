@@ -1,0 +1,45 @@
+@import "basics";
+@import "tokens";
+
+body {
+	font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    color: var(--color-grey);
+    background: var(--color-background);
+}
+
+// container
+.container {
+    max-width: 1180px; 
+    margin: auto; 
+    padding: 0 24px;
+}
+
+// Default box
+.box {
+    background: white;
+    border: var(--border-grey-1);
+    &.h32 {padding-left: 32px; padding-right: 32px;}
+    &.h24 {padding-left: 24px; padding-right: 24px;}
+    &.v24 {padding-top: 24px; padding-bottom: 24px;}
+    &.v16 {padding-top: 16px; padding-bottom: 16px;}
+}
+
+// 
+// Spacings
+// 
+
+// gap
+.gap-spacing-4-xs {  gap: var(--spacing-4-xs); }
+.gap-spacing-3-xs {  gap: var(--spacing-3-xs); }
+.gap-spacing-2-xs {  gap: var(--spacing-2-xs); }
+.gap-spacing-xs   {    gap: var(--spacing-xs); }
+.gap-spacing-s    {    gap: var(--spacing-s); }
+.gap-spacing-m    {    gap: var(--spacing-m); }
+.gap-spacing-l    {    gap: var(--spacing-l); }
+.gap-spacing-xl   {    gap: var(--spacing-xl); }
+.gap-spacing-2-xl {  gap: var(--spacing-2-xl); }
+.gap-spacing-3-xl {  gap: var(--spacing-3-xl); }
+.gap-spacing-4-xl {  gap: var(--spacing-4-xl); }
+.gap-spacing-5-xl {  gap: var(--spacing-5-xl); }
+.gap-spacing-6-xl {  gap: var(--spacing-6-xl); }
