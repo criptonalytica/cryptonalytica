@@ -116,9 +116,9 @@ button {
 
   // Sizes
   &.small {
-    min-height: 36px;
-    min-width: 36px;
-    padding: 0 var(--spacing-xs);
+    min-height: 32px;
+    min-width: 32px;
+    padding: 0 var(--spacing-2-xs);
     border-radius: var(--border-radius-xs);
     font-size: var(--text-s12-font-size);
   }

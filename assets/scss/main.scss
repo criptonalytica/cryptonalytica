@@ -16,7 +16,7 @@ body {
 }
 
 // Default box
-.box {
+.box, .card {
     background: white;
     border: var(--border-grey-1);
     &.h32 {padding-left: 32px; padding-right: 32px;}
