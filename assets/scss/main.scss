@@ -28,8 +28,14 @@ body {
     &.v16 {padding-top: var(--spacing-xs); padding-bottom: var(--spacing-xs);}
 
     .card-title {
-        margin-bottom: var(--spacing-m);
+        margin-bottom: var(--spacing-s);
+        .typography {color: var(--color-text);}
     }
+}
+
+.session-title {
+    margin-bottom: var(--spacing-m);
+    color: var(--color-black);
 }
 
 // 
@@ -50,3 +56,19 @@ body {
 .gap-spacing-4-xl {  gap: var(--spacing-4-xl); }
 .gap-spacing-5-xl {  gap: var(--spacing-5-xl); }
 .gap-spacing-6-xl {  gap: var(--spacing-6-xl); }
+
+
+// gap
+.top-spacing-4-xs {  margin-top: var(--spacing-4-xs); }
+.top-spacing-3-xs {  margin-top: var(--spacing-3-xs); }
+.top-spacing-2-xs {  margin-top: var(--spacing-2-xs); }
+.top-spacing-xs   {    margin-top: var(--spacing-xs); }
+.top-spacing-s    {    margin-top: var(--spacing-s); }
+.top-spacing-m    {    margin-top: var(--spacing-m); }
+.top-spacing-l    {    margin-top: var(--spacing-l); }
+.top-spacing-xl   {    margin-top: var(--spacing-xl); }
+.top-spacing-2-xl {  margin-top: var(--spacing-2-xl); }
+.top-spacing-3-xl {  margin-top: var(--spacing-3-xl); }
+.top-spacing-4-xl {  margin-top: var(--spacing-4-xl); }
+.top-spacing-5-xl {  margin-top: var(--spacing-5-xl); }
+.top-spacing-6-xl {  margin-top: var(--spacing-6-xl); }

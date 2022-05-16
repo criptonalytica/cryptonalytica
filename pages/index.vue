@@ -21,7 +21,7 @@
 
         <section id="new-coins-index">
             <div class="session-title flex between middle">
-                <n-text type="h4">Esse é um texto h2</n-text>
+                <n-text type="h4" weight="bold">Esse é um texto h2</n-text>
                 <n-button size="small" hierarchy="secondary" icon="question-circle">What is this?</n-button>
             </div>
 
@@ -30,14 +30,17 @@
                     <section id="new-coins-launch" class="card w100">
                         <div class="card-title flex middle between">
                             <n-text type="h6" weight="medium">New coins launch</n-text>
-                            <div>qq coisa</div>
+                            <div class="flex gap-spacing-m">
+                                <chart-legend color="primary">New coin</chart-legend>
+                                <chart-legend color="pink">BTG Change</chart-legend>
+                            </div>
                         </div>
 
                         <img src="~/assets/img/fake-chart-coins.png" alt="fake">
 
                     </section>
-                    <section id="new-coins-numbers" class="flex gap-spacing-2-xs">
-                        <div v-for="item in indexHighlights" class="flex card card h24 v24">
+                    <section id="new-coins-numbers" class="flex w100 gap-spacing-2-xs">
+                        <div v-for="item in indexHighlights" class="flex flex-1 card card h24 v24">
                             <div class="icon">
                                 <span v-if="item.value > 0">UP</span>
                                 <span v-else>DOWN</span>
@@ -50,19 +53,34 @@
                     </section>
                 </section>
                 <section id="index-info" class="flex column gap-spacing-2-xs">
-                    <div id="index-defail" class="card h32 v24 w100">
-                        <n-text type="h6">Index details</n-text>
-                    </div>
+
+                    <index-details :data="indexDetails"></index-details>
+
                     <div id="index-about" class="card h32 v24">
-                        <n-text type="h6">About index</n-text>
+                        <div class="card-title">
+                            <n-text type="h6">About index</n-text>
+                        </div>
                         <article>
                             <p>Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses. </p>
                         </article>
                     </div>
                 </section>
             </section>
+            
+            <section class="top-spacing-xs card h32 v24">
+                    <div class="card-title flex middle between">
+                        <n-text type="h6">About index</n-text>
+                        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+                    </div>
 
-            <div v-for="x in tableQualquer.thead">
+                    <article>
+                        <p>Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses. </p>
+                    </article>
+            </section>
+
+        </section>
+
+        <div v-for="x in tableQualquer.thead">
                 {{x}}
             </div>
 
@@ -70,27 +88,37 @@
                 {{item.price}}
                 {{item.name}}
             </div>
-
-        </section>
       </main>
     </section>
 </template>
 
 <script>
+import chartLegend from '~/components/chartLegend.vue'
+import IndexDetails from '~/components/indexDetails.vue'
 // Não precisa, o nuxt importa automatico
 // import Header from '../components/Header.vue'
 
 export default {
+  components: { chartLegend, IndexDetails },
     /*components: {
         Header,
     },*/
 
     data() {
         return {
+            indexDetails: [
+                {title: 'Index value', value: '1.200'},
+                {title: '1 year variation', start: '-2.00', end: '4.00'},
+                {title: 'Lifetime variation', start: '-2.00', end: '4.00'},
+            ],
+
+            aboutIndex: 'Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses.',
+
             indexHighlights: [
                 {title: 'Today', value: '3.28'},
                 {title: '7 Days', value: '-3.28'},
-                {title: 'Month', value: '-3.28'}
+                {title: 'Month', value: '-3.28'},
+                {title: '3 Months', value: '-3.28'}
             ],
 
             tableQualquer: {

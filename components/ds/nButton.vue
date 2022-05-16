@@ -2,7 +2,7 @@
   <button
     v-on="$listeners"
     class="flex middle"
-    :class="[hierarchy, size, iconPosition, { grey: grey }]"
+    :class="[hierarchy, size, iconPosition]"
     :disabled="disabled"
   >
     <div v-if="icon" class="icon">
@@ -85,8 +85,8 @@ button {
   }
 
   .icon {
+    // margin: -2px;
     img {
-      // margin: -4px;
       max-width: 100%;
       height: auto;
     }
@@ -108,10 +108,10 @@ button {
   &.secondary {
     color: var(--color-primary);
     background: transparent;
-    background: var(--color-blue-1);
+    // background: var(--color-blue-1);
 
     &:not(:disabled):hover {
-      background: var(--color-blue-2);
+      background: var(--color-blue-1);
     }
     &:disabled {
       opacity: .5;
