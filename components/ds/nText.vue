@@ -45,10 +45,10 @@ export default {
     // Header
     h1, h2, h3, h4, h5, h6 {
         line-height: var(--text-h-line-height);
-        font-weight: var(--text-weight-bold);
+        font-weight: var(--text-weight-medium);
         color: inherit;
         .regular & {font-weight: var(--text-weight-regular);}
-        .medium & {font-weight: var(--text-weight-medium);}
+        .bold & {font-weight: var(--text-weight-bold);}
     }
 
     .regular {font-weight: var(--text-weight-regular);}

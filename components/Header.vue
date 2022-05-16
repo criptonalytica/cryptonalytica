@@ -25,14 +25,14 @@
 </template>
 
 <script>
-import nButton from '../components/designsystem/nButton.vue'
+// import nButton from '../components/ds/nButton.vue'
 
-export default {
-    components: {
-        nButton,
-    },
+// export default {
+//     components: {
+//         nButton,
+//     },
     
-}
+// }
 </script>
 
 <style lang="scss" scoped>

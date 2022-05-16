@@ -85,7 +85,11 @@ button {
   }
 
   .icon {
-    img {margin: -4px;}
+    img {
+      // margin: -4px;
+      max-width: 100%;
+      height: auto;
+    }
     // remove spacing around image
   }
 
@@ -121,6 +125,10 @@ button {
     padding: 0 var(--spacing-2-xs);
     border-radius: var(--border-radius-xs);
     font-size: var(--text-s12-font-size);
+    .icon {
+      max-width: 16px;
+      
+    }
   }
 
   &.medium {
