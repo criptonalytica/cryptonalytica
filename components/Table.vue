@@ -19,7 +19,7 @@
             <tbody>
                 <tr v-for="item in sortedData" :key="item.ranking">
                     <td>{{item.ranking}}</td>
-                    <td icon="arrow-right"> <img :src="item.icon"> {{item.name}}</td>
+                    <td icon="arrow-right" class="name"> <img :src="item.icon"> {{item.name}} <span>{{item.ticker}}</span></td>
                     <td>{{item.price}}</td>
                     <td v-if="item.oneDay>0" style="color:var(--color-green)">{{item.oneDay}}%</td>
                     <td v-else style="color:var(--color-red)"> {{item.oneDay}} </td>
@@ -43,10 +43,10 @@ export default {
     data() {
         return {
                 tbody: [
-                    {ranking: '01', icon:'https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png', name: 'Woo network', price: 118.00, oneDay: +2.32, sevenDays: -4.12, start:'Feb,24', market: 28, volume: 16, circ: 54, weight: 11},
-                    {ranking: '02', icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', name: 'Anchor Cripto', price: 324.07, oneDay: -4.23, sevenDays: +4.12, start:'Jan,9', market: 21, volume: 14, circ: 23, weight: 81},
-                    {ranking: '03', icon: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png', name: 'Solano Network', price: 543.10, oneDay: +2.98, sevenDays: -1.12, start:'Dec,4', market: 81, volume: 11, circ: 11, weight: 41},
-                    {ranking: '04', icon:'https://s2.coinmarketcap.com/static/img/coins/64x64/6756.png', name: 'Alaca Token', price: 232.98, oneDay: +3.6, sevenDays: +4.12, start:'Oct,18', market: 65, volume: 36, circ: 17, weight: 14},
+                    {ranking: '01', icon:'https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png', name: 'Woo network', ticker:'WOO',price: 118.00, oneDay: +2.32, sevenDays: -4.12, start:'Feb,24', market: 28, volume: 16, circ: 54, weight: 11},
+                    {ranking: '02', icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', name: 'Anchor Cripto', ticker:'ACH',price: 324.07, oneDay: -4.23, sevenDays: +4.12, start:'Jan,9', market: 21, volume: 14, circ: 23, weight: 81},
+                    {ranking: '03', icon: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png', name: 'Solano Network', ticker:'SLN', price: 543.10, oneDay: +2.98, sevenDays: -1.12, start:'Dec,4', market: 81, volume: 11, circ: 11, weight: 41},
+                    {ranking: '04', icon:'https://s2.coinmarketcap.com/static/img/coins/64x64/6756.png', name: 'Alaca Token', ticker:'ALC', price: 232.98, oneDay: +3.6, sevenDays: +4.12, start:'Oct,18', market: 65, volume: 36, circ: 17, weight: 14},
                     ],
                 // abaixo é pra se for usar o v-for dos títulos, se não quiser só apagar
                 header: [
@@ -92,9 +92,8 @@ export default {
         background-color:#fff;
         width: 1114px;
         height: 60px;
-        #head{
-            display:flex;
-            flex-direction:row;
+        td.name>*{
+            display:inline-block
         }
         tr {
             text-align:center;

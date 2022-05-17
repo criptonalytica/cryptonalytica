@@ -37,7 +37,7 @@
 
                     </section>
                     <section id="new-coins-numbers" class="flex gap-spacing-2-xs">
-                        <div v-for="item in indexHighlights" class="flex card card h24 v24">
+                        <div v-for="item in indexHighlights" :key="item" class="flex card card h24 v24">
                             <div class="icon">
                                 <span v-if="item.value > 0">UP</span>
                                 <span v-else>DOWN</span>
