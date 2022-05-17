@@ -62,14 +62,9 @@
                 </section>
             </section>
 
-            <div v-for="x in tableQualquer.thead">
-                {{x}}
-            </div>
+            <Table/>
 
-            <div v-for="item in tableQualquer.tbody">
-                {{item.price}}
-                {{item.name}}
-            </div>
+            
 
         </section>
       </main>
@@ -91,17 +86,7 @@ export default {
                 {title: 'Today', value: '3.28'},
                 {title: '7 Days', value: '-3.28'},
                 {title: 'Month', value: '-3.28'}
-            ],
-
-            tableQualquer: {
-                thead: [
-                    '#', 'Name', 'Price', '24h'
-                ],
-                tbody: [
-                    {ranking: '01', name: 'Woo network', price: '118.00', '24h': '+2.32%'},
-                    {ranking: '02', name: 'Acala Token', price: '118.00', '24h': '+2.32%'},
-                ]
-            }
+            ]
         }
     }
 
