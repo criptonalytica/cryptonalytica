@@ -21,10 +21,10 @@
                 <td>{{item.oneDay}}%</td>
                 <td>{{item.sevenDays}}%</td>
                 <td>{{item.star}}</td>
-                <td>{{item.market}}</td>
-                <td>{{item.volume}}</td>
-                <td>{{item.circ}}</td>
-                <td>{{item.wight}}</td>
+                <td>{{item.market}}M</td>
+                <td>{{item.volume}}M</td>
+                <td>{{item.circ}}M</td>
+                <td>{{item.weight}}%</td>
             </tbody>
         </table>
     </div>
@@ -37,10 +37,10 @@ export default {
         return {
             table: {
                 tbody: [
-                    {ranking: '01',icon:'https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png', name: 'Woo network', price: 118.00, oneDay: +2.32, sevenDays: +4.12, star:'Feb,24', market: '281M', volume: '16M', circ: '54M', weight: '11%'},
-                    {ranking: '02', icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', name: 'Anchor Cripto', price: 324.00, oneDay: -4.23, sevenDays: +4.12, star:'Jan,9', market: '21M', volume: '14M', circ: '23M', weight: '81%'},
-                    {ranking: '03', icon: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png', name: 'Solano Network', price: 543.00, oneDay: +2.98, sevenDays: +1.12, star:'Dec,4', market: '81M', volume: '11M', circ: '11M', weight: '41%'},
-                    {ranking: '04', icon:'https://s2.coinmarketcap.com/static/img/coins/64x64/6756.png', name: 'Alaca Token', price: 232.00, oneDay: +3.6, sevenDays: +4.12, star:'Oct,18', market: '65M', volume: '36M', circ: '17M', weight: '14%'},
+                    {ranking: '01',icon:'https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png', name: 'Woo network', price: 118.00, oneDay: +2.32, sevenDays: +4.12, star:'Feb,24', market: 281, volume: 16, circ: 54, weight: 11},
+                    {ranking: '02', icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', name: 'Anchor Cripto', price: 324.00, oneDay: -4.23, sevenDays: +4.12, star:'Jan,9', market: 21, volume: 14, circ: 23, weight: 81},
+                    {ranking: '03', icon: 'https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png', name: 'Solano Network', price: 543.00, oneDay: +2.98, sevenDays: +1.12, star:'Dec,4', market: 81, volume: 11, circ: 11, weight: 41},
+                    {ranking: '04', icon:'https://s2.coinmarketcap.com/static/img/coins/64x64/6756.png', name: 'Alaca Token', price: 232.00, oneDay: +3.6, sevenDays: +4.12, star:'Oct,18', market: 65, volume: 36, circ: 17, weight: 14},
                     ]
             }
         }
