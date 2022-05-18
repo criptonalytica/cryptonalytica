@@ -3,18 +3,18 @@
        <Header />
       <div class="container" id="content">
           <h1>Tabela de valores</h1>
-          <CoinTable :client="tableData" />
+          <coinTable :client="tableData" />
       </div>
     </div>
 </template>
 
 <script>
-import CoinTable from '../components/CoinTable.vue'
+import coinTable from '../components/coinTable.vue'
 import Header from '../components/Header.vue'
 
 export default {
     components: {
-        CoinTable,
+        coinTable,
         Header
     },
     

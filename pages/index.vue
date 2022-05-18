@@ -70,7 +70,7 @@
             </div>
 
             <div class="box h32">
-                <coin-table />
+                <coin-table :data="tableData" maxrows="10"/>
             </div>
         </section>
 
@@ -103,15 +103,38 @@ export default {
                 {title: '3 Months', value: '-3.28'}
             ],
 
-            tableQualquer: {
-                thead: [
-                    '#', 'Name', 'Price', '24h'
-                ],
+            tableData: {
                 tbody: [
-                    {ranking: '01', name: 'Woo network', price: '118.00', '24h': '+2.32%'},
-                    {ranking: '02', name: 'Acala Token', price: '118.00', '24h': '+2.32%'},
-                ]
-            }
+                    {
+                        ranking: '01', coin: 'Woo network', price: 118.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Mar, 2022', market: 28, volume: 16, circ: 54, weight: 11, 
+                        supports: {icon: 'https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png', ticker: 'WOO'}
+                    },
+                    {
+                        ranking: '02', coin: 'Anchor Crypto', price: 203.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Feb, 2022', market: 28, volume: 16, circ: 54, weight: 11, 
+                        supports: {icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', ticker: 'WOO'}
+                    },
+                    {
+                        ranking: '03', coin: 'Woo network', price: 322.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Mar, 2022', market: 28, volume: 16, circ: 54, weight: 11, 
+                        supports: {icon: 'https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png', ticker: 'WOO'}
+                    },
+                    {
+                        ranking: '04', coin: 'Anchor Crypto', price: 203.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Feb, 2022', market: 28, volume: 16, circ: 54, weight: 11, 
+                        supports: {icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', ticker: 'WOO'}
+                    },
+                ],
+                thead: {
+                    ranking: '#',
+                    coin: 'Name', //a chave sempre deve chamar 'coin'
+                    price: 'Price',
+                    oneDay: '24h',
+                    sevenDays: '7 Days',
+                    start: 'Start',
+                    market: 'Market Cap',
+                    volume: '24h Volume',
+                    circ: 'Cic. Supply',
+                    weight: 'Weight'
+                },
+            },
         }
     }
 

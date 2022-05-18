@@ -3,14 +3,15 @@
         <table>
             <thead>
                 <tr>
-                    <th v-for="(title, key) in tableData.thead" @click="sort(key)">
+                    <th v-for="(title, key) in data.thead" @click="sort(key)" 
+                    :class="{[currentSortDir] : currentSort==key}">
                         {{title}}
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(row) in sortedData">
-                    <!-- Object.keys(tableData.thead).length -->
+                <tr v-for="(row, index) in sortedData" v-if="index<maxrows">
+                    <!-- Object.keys(data.thead).length talvez usar -->
                     <td v-for="(value, key) in row" v-if="key!='supports'" :class="key">
                         <!-- Se for o nome da cripto -->
                         <div v-if="key=='coin'" class="flex middle">
@@ -33,34 +34,16 @@
 
 <script>
 export default {
-
+    props: {
+        data: {
+            type: Array,
+        },
+        maxrows: {
+            type: Number
+        }
+    },
     data() {
         return {
-            tableData: {
-                tbody: [
-                    {
-                        ranking: '01', coin: 'Woo network', price: 118.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Mar, 2022', market: 28, volume: 16, circ: 54, weight: 11, 
-                        supports: {icon: 'https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png', ticker: 'WOO'}
-                    },
-                    {
-                        ranking: '02', coin: 'Anchor Crypto', price: 203.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Feb, 2022', market: 28, volume: 16, circ: 54, weight: 11, 
-                        supports: {icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', ticker: 'WOO'}
-                    },
-                ],
-                thead: {
-                    ranking: '#',
-                    coin: 'Name', //a chave sempre deve chamar 'coin'
-                    price: 'Price',
-                    oneDay: '24h',
-                    sevenDays: '7 Days',
-                    start: 'Start',
-                    market: 'Market Cap',
-                    volume: '24h Volume',
-                    circ: 'Cic. Supply',
-                    weight: 'Weight'
-                },
-            },
-
             currentSort: 'ranking',
             currentSortDir:'asc',
         }
@@ -89,8 +72,8 @@ export default {
     },
     computed: {
         sortedData:function() {
-            // console.log(this.tableData.tbody);
-            return this.tableData.tbody.sort((a,b) => {
+            console.log(this.data.tbody);
+            return this.data.tbody.sort((a,b) => {
                 let modifier = 1;
                 if(this.currentSortDir === 'desc') modifier = -1;
                 if(a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
@@ -117,6 +100,28 @@ export default {
                 font-weight: var(--text-weight-regular);
                 font-size: var(--text-s12-font-size);
                 color: var(--color-grey-4);
+                cursor: pointer;
+
+                &:after {
+                    content: '▾';
+                    font-size: 14px;
+                    position: absolute;
+                    margin-top: -1px;
+                    margin-left: var(--spacing-4-xs);
+                    color: var(--color-grey-3);
+                    opacity: 0;
+                    transition: opacity .2s;
+                }
+
+                &.desc, &.asc {
+                    &:after {color: var(--color-primary); opacity: 1;}
+                    &.desc:after {transform: rotate(180deg); margin-top: 0;}
+                }
+
+                &:hover {
+                    color: var(--color-grey-5);
+                    &:after {opacity: 1;}
+                }
             }
         }
     
@@ -126,7 +131,7 @@ export default {
             padding-top: 16px; padding-bottom: 16px;
 
             &.coin {
-                width: 220px;
+                width: 280px;
                 white-space: nowrap;
                 padding-right: 24px;
 
@@ -142,7 +147,7 @@ export default {
                 }
             } 
 
-            &:first-child {width: 30px;}
+            &:first-child {width: 40px;}
             &:last-child {width: 50px;}
         }
 
