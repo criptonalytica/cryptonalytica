@@ -70,7 +70,7 @@
             </div>
 
             <div class="box h32">
-                <Table />
+                <coin-table />
             </div>
         </section>
 
@@ -81,18 +81,11 @@
 </template>
 
 <script>
-import chartLegend from '~/components/chartLegend.vue'
-import IndexDetails from '~/components/indexDetails.vue'
-import Table from '~/components/Table.vue'
 // Não precisa, o nuxt importa automatico
 // import Header from '../components/Header.vue'
 
 export default {
-  components: { chartLegend, IndexDetails, Table },
-    /*components: {
-        Header,
-    },*/
-
+  
     data() {
         return {
             indexDetails: [
