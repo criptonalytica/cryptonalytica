@@ -18,7 +18,7 @@
             </thead>
             <tbody>
                 <tr v-for="item in sortedData" :key="item.ranking">
-                    <td>{{item.ranking}}</td>
+                    <td style="color:var(--color-gray-4)">{{item.ranking}}</td>
                     <td icon="arrow-right" class="name"> <img :src="item.icon"> {{item.name}} <span>{{item.ticker}}</span></td>
                     <td>{{item.price}}</td>
                     <td v-if="item.oneDay>0" style="color:var(--color-green)">{{item.oneDay}}%</td>
@@ -102,6 +102,10 @@ export default {
             // justify-content: space-between;
             // flex-direction: column;
             // align-items: flex-start;
+            font-weight: var(--text-weight-regular);
+            font-size: var(--text-s12-font-size);
+            line-height: var(--text-s-line-height);
+            color: var(--color-grey-4);
             width: 1114px;
             height: 60px;
         }
