@@ -53,7 +53,7 @@
             
             <section class="top-spacing-xs box h32 v24">
                     <div class="box-title flex middle between">
-                        <n-text type="h6">About index</n-text>
+                        <n-text type="h6">Index coin list</n-text>
                         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
                     </div>
 
@@ -69,12 +69,14 @@
                 <span>Abas vão aqui</span>
             </div>
 
-            <div class="box">
+            <div class="box h32">
                 <Table />
             </div>
         </section>
 
       </main>
+
+      <br><br><br><br>
     </section>
 </template>
 
