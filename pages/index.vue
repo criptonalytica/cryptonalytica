@@ -3,32 +3,16 @@
     <Header />
 
       <main class="container">
-          <n-text type="h1">Esse é um texto h1</n-text>
-          <n-text type="h2">Esse é um texto h2</n-text>
-          <n-text type="h3">Esse é um texto h3 regular</n-text>
-
-          <n-text>Esse é um texto h3 regular</n-text>
-
-
-          <n-button>Um botao pequeno</n-button>
-          <n-button size="medium">Um botao grande</n-button>
-          <n-button size="medium" hierarchy="secondary">Um botao secundário</n-button>
-          <n-button size="medium" hierarchy="secondary" iconPosition="right" icon="arrow-right">Um botao com icone</n-button>
-
-          <hr>
-          <br><br><br><br>
-
-
-        <section id="new-coins-index">
-            <div class="session-title flex between middle">
+        <section id="new-coins-index" class="section-content">
+            <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">Esse é um texto h2</n-text>
                 <n-button size="small" hierarchy="secondary" icon="question-circle">What is this?</n-button>
             </div>
 
             <section class="flex gap-spacing-xs">
                 <section class="flex column gap-spacing-2-xs flex-1">
-                    <section id="new-coins-launch" class="card w100">
-                        <div class="card-title flex middle between">
+                    <section id="new-coins-launch" class="box h32 v24 w100">
+                        <div class="box-title flex middle between">
                             <n-text type="h6" weight="medium">New coins launch</n-text>
                             <div class="flex gap-spacing-m">
                                 <chart-legend color="primary">New coin</chart-legend>
@@ -40,7 +24,7 @@
 
                     </section>
                     <section id="new-coins-numbers" class="flex w100 gap-spacing-2-xs">
-                        <div v-for="item in indexHighlights" class="flex flex-1 card card h24 v24">
+                        <div v-for="item in indexHighlights" class="flex flex-1 box box h24 v24">
                             <div class="icon">
                                 <span v-if="item.value > 0">UP</span>
                                 <span v-else>DOWN</span>
@@ -56,8 +40,8 @@
 
                     <index-details :data="indexDetails"></index-details>
 
-                    <div id="index-about" class="card h32 v24">
-                        <div class="card-title">
+                    <div id="index-about" class="box h32 v24">
+                        <div class="box-title">
                             <n-text type="h6">About index</n-text>
                         </div>
                         <article>
@@ -67,8 +51,8 @@
                 </section>
             </section>
             
-            <section class="top-spacing-xs card h32 v24">
-                    <div class="card-title flex middle between">
+            <section class="top-spacing-xs box h32 v24">
+                    <div class="box-title flex middle between">
                         <n-text type="h6">About index</n-text>
                         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
                     </div>
@@ -77,17 +61,19 @@
                         <p>Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses. </p>
                     </article>
             </section>
-
         </section>
 
-        <div v-for="x in tableQualquer.thead">
-                {{x}}
+        <section id="list-new-coins" class="section-content">
+            <div class="section-title flex between middle">
+                <n-text type="h4" weight="bold">List of new coins</n-text>
+                <span>Abas vão aqui</span>
             </div>
 
-            <div v-for="item in tableQualquer.tbody">
-                {{item.price}}
-                {{item.name}}
+            <div class="box">
+                <Table />
             </div>
+        </section>
+
       </main>
     </section>
 </template>
@@ -95,11 +81,12 @@
 <script>
 import chartLegend from '~/components/chartLegend.vue'
 import IndexDetails from '~/components/indexDetails.vue'
+import Table from '~/components/Table.vue'
 // Não precisa, o nuxt importa automatico
 // import Header from '../components/Header.vue'
 
 export default {
-  components: { chartLegend, IndexDetails },
+  components: { chartLegend, IndexDetails, Table },
     /*components: {
         Header,
     },*/
@@ -144,7 +131,7 @@ export default {
     }
 
     #new-coins-launch {
-        .card-title {
+        .box-title {
             margin-bottom: var(--spacing-xl);
         }
     }

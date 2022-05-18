@@ -40,6 +40,7 @@
         border: var(--border-grey-1);
         padding: var(--spacing-m) 0;
         background: white;
+        margin-bottom: var(--spacing-4-xl);
 
         li {
             display: inline-block;

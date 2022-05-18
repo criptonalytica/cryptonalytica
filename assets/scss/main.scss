@@ -20,22 +20,25 @@ body {
     background: white;
     border: var(--border-grey-1);
     border-radius: var(--border-radius-xs);
-    padding: var(--spacing-m);
+    // padding: var(--spacing-m);
 
     &.h32 {padding-left: var(--spacing-l); padding-right: var(--spacing-l);}
     &.h24 {padding-left: var(--spacing-m); padding-right: var(--spacing-m);}
     &.v24 {padding-top: var(--spacing-m); padding-bottom: var(--spacing-m);}
     &.v16 {padding-top: var(--spacing-xs); padding-bottom: var(--spacing-xs);}
 
-    .card-title {
+    .box-title, .card-title {
         margin-bottom: var(--spacing-s);
         .typography {color: var(--color-text);}
     }
 }
 
-.session-title {
-    margin-bottom: var(--spacing-m);
-    color: var(--color-black);
+.section-content {
+    + .section-content {margin-top: var(--spacing-5-xl);}
+    .section-title {
+        margin-bottom: var(--spacing-m);
+        color: var(--color-black);
+    }
 }
 
 // 
