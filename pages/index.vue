@@ -74,6 +74,8 @@
             </div>
         </section>
 
+        <Social-Table :data="indexCoinList" :head="tableData"/>
+
       </main>
 
       <br><br><br><br>
@@ -81,88 +83,169 @@
 </template>
 
 <script>
+import SocialTable from "../components/SocialTable.vue";
 // Não precisa, o nuxt importa automatico
 // import Header from '../components/Header.vue'
 
 export default {
-  
     data() {
         return {
             indexDetails: [
-                {title: 'Index value', value: '1.200'},
-                {title: '1 year variation', start: '-2.00', end: '4.00'},
-                {title: 'Lifetime variation', start: '-2.00', end: '4.00'},
+                { title: "Index value", value: "1.200" },
+                { title: "1 year variation", start: "-2.00", end: "4.00" },
+                { title: "Lifetime variation", start: "-2.00", end: "4.00" },
             ],
-
-            aboutIndex: 'Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses.',
-
+            aboutIndex: "Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses.",
             indexHighlights: [
-                {title: 'Today', value: '3.28'},
-                {title: '7 Days', value: '-3.28'},
-                {title: 'Month', value: '-3.28'},
-                {title: '3 Months', value: '-3.28'}
+                { title: "Today", value: "3.28" },
+                { title: "7 Days", value: "-3.28" },
+                { title: "Month", value: "-3.28" },
+                { title: "3 Months", value: "-3.28" }
             ],
-
             indexCoinList: [
                 {
-                    ranking: '01', name: 'Woo network', price: 118.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Mar, 2022', market: 28, volume: '16', circ: '54M', weight: '11%', 
-                    icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', ticker: 'WOO',
-                    category: 'DeFi'
+                    ranking: "01",
+                    name: "Woo network",
+                    price: 118,
+                    oneDay: "+2.32",
+                    sevenDays: "-4.12",
+                    start: "Mar, 2022",
+                    market: 28,
+                    volume: "16",
+                    circ: "54M",
+                    weight: "11%",
+                    icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png",
+                    ticker: "WOO",
+                    category: "DeFi",
+                    follower: 643.123,
+                    growth: 23.53,
                 },
                 {
-                    ranking: '02', name: 'Anchor Crypto', price: 203.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Feb, 2022', market: 28, volume: '16', circ: '54M', weight: '11%', 
-                    icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', ticker: 'WOO',
-                    category: 'Mobile'
+                    ranking: "02",
+                    name: "Anchor Crypto",
+                    price: 203,
+                    oneDay: "+2.32",
+                    sevenDays: "-4.12",
+                    start: "Feb, 2022",
+                    market: 28,
+                    volume: "16",
+                    circ: "54M",
+                    weight: "11%",
+                    icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4",
+                    ticker: "ACH",
+                    category: "Mobile",
+                    follower: 543.238,
+                    growth: 13.83,
                 },
                 {
-                    ranking: '03', name: 'Woo network', price: 322.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Mar, 2022', marketcap: '28M', volume: '16', circ: '54M', weight: '11%', 
-                    icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', ticker: 'WOO',
-                    category: 'Gaming'
+                    ranking: "03",
+                    name: "Woo network",
+                    price: 322,
+                    oneDay: "+2.32",
+                    sevenDays: "-4.12",
+                    start: "Mar, 2022",
+                    marketcap: "28M",
+                    volume: "16",
+                    circ: "54M",
+                    weight: "11%",
+                    icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png",
+                    ticker: "WOO",
+                    category: "Gaming",
+                    follower: 123.993,
+                    growth: -3.53,
                 },
                 {
-                    ranking: '04', name: 'Anchor Crypto', price: 203.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Feb, 2022', marketcap: '28M', volume: '16', circ: '54M', weight: '11%', 
-                    icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', ticker: 'WOO',
-                    category: 'Payment'
+                    ranking: "04",
+                    name: "Anchor Crypto",
+                    price: 203,
+                    oneDay: "+2.32",
+                    sevenDays: "-4.12",
+                    start: "Feb, 2022",
+                    marketcap: "28M",
+                    volume: "16",
+                    circ: "54M",
+                    weight: "11%",
+                    icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4",
+                    ticker: "WOO",
+                    category: "Payment",
+                    follower: 872.165,
+                    growth: 70.53,
                 },
             ],
-
             tableData: {
                 tbody: [
                     {
-                        ranking: '01', coin: 'Woo network', price: 118.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Mar, 2022', marketcap: '28M', volume: 16, circ: 54, weight: 11, 
-                        supports: {icon: 'https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png', ticker: 'WOO'}
+                        ranking: "01",
+                        coin: "Woo network",
+                        price: 118,
+                        oneDay: "+2.32",
+                        sevenDays: "-4.12",
+                        start: "Mar, 2022",
+                        marketcap: "28M",
+                        volume: 16,
+                        circ: 54,
+                        weight: 11,
+                        supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
                     },
                     {
-                        ranking: '02', coin: 'Anchor Crypto', price: 203.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Feb, 2022', marketcap: '28M', volume: 16, circ: 54, weight: 11, 
-                        supports: {icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', ticker: 'WOO'}
+                        ranking: "02",
+                        coin: "Anchor Crypto",
+                        price: 203,
+                        oneDay: "+2.32",
+                        sevenDays: "-4.12",
+                        start: "Feb, 2022",
+                        marketcap: "28M",
+                        volume: 16,
+                        circ: 54,
+                        weight: 11,
+                        supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
                     },
                     {
-                        ranking: '03', coin: 'Woo network', price: 322.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Mar, 2022', marketcap: '28M', volume: 16, circ: 54, weight: 11, 
-                        supports: {icon: 'https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png', ticker: 'WOO'}
+                        ranking: "03",
+                        coin: "Woo network",
+                        price: 322,
+                        oneDay: "+2.32",
+                        sevenDays: "-4.12",
+                        start: "Mar, 2022",
+                        marketcap: "28M",
+                        volume: 16,
+                        circ: 54,
+                        weight: 11,
+                        supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
                     },
                     {
-                        ranking: '04', coin: 'Anchor Crypto', price: 203.00, oneDay: '+2.32', sevenDays: '-4.12', start: 'Feb, 2022', marketcap: '28M', volume: 16, circ: 54, weight: 11, 
-                        supports: {icon: 'https://avatars.githubusercontent.com/u/67821563?s=280&v=4', ticker: 'WOO'}
+                        ranking: "04",
+                        coin: "Anchor Crypto",
+                        price: 203,
+                        oneDay: "+2.32",
+                        sevenDays: "-4.12",
+                        start: "Feb, 2022",
+                        marketcap: "28M",
+                        volume: 16,
+                        circ: 54,
+                        weight: 11,
+                        supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
                     },
                 ],
                 thead: {
-                    ranking: '#',
-                    coin: 'Name', //a chave sempre deve chamar 'coin'
-                    price: 'Price',
-                    oneDay: '24h',
-                    sevenDays: '7 Days',
-                    start: 'Start',
-                    market: 'Market Cap',
-                    volume: '24h Volume',
-                    circ: 'Cic. Supply',
-                    weight: 'Weight'
+                    ranking: "#",
+                    coin: "Name",
+                    price: "Price",
+                    oneDay: "24h",
+                    sevenDays: "7 Days",
+                    start: "Start",
+                    market: "Market Cap",
+                    volume: "24h Volume",
+                    circ: "Cic. Supply",
+                    weight: "Weight",
+                    followers: "Followers",
+                    growth: "Growth",
+                    project: "Project"
                 },
             },
-        }
-    }
-
-    
-    
+        };
+    },
+    // components: { SocialTable }
 }
 </script>
 

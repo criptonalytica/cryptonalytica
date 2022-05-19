@@ -72,7 +72,6 @@ export default {
     },
     computed: {
         sortedData:function() {
-            console.log(this.data.tbody);
             return this.data.tbody.sort((a,b) => {
                 let modifier = 1;
                 if(this.currentSortDir === 'desc') modifier = -1;
