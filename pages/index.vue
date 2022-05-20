@@ -74,7 +74,7 @@
             </div>
         </section>
 
-        <section id="list-new-coins" class="section-content">
+        <section id="social-numbers" class="section-content">
             <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">Social numbers</n-text>
             </div>
@@ -93,7 +93,6 @@
                     <coin-table :data="socialGithub" maxrows="10"/>
                 </div>
             </section>
-
         </section>
 
 
@@ -288,26 +287,26 @@ export default {
             socialGithub: {
                 tbody: [
                     {
-                        ranking: "01", coin: "Woo network", followers: '393.490', growth: '+23.98%',
+                        ranking: "01", coin: "Woo network", commits: '393.490', growth: '+23.98%',
                         supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
                     },
                     {
-                        ranking: "02", coin: "Anchor Crypto", followers: '393.490', growth: '+23.98%',
+                        ranking: "02", coin: "Anchor Crypto", commits: '393.490', growth: '+23.98%',
                         supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
                     },
                     {
-                        ranking: "03", coin: "Woo network", followers: '393.490', growth: '+23.98%',
+                        ranking: "03", coin: "Woo network", commits: '393.490', growth: '+23.98%',
                         supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
                     },
                     {
-                        ranking: "04", coin: "Anchor Crypto", followers: '393.490', growth: '+23.98%',
+                        ranking: "04", coin: "Anchor Crypto", commits: '393.490', growth: '+23.98%',
                         supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
                     },
                 ],
                 thead: {
                     ranking: "#",
                     coin: "Project",
-                    followers: "Commits",
+                    commits: "Commits",
                     growth: "Growth",
                 },
             },
