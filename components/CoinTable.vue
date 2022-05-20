@@ -36,10 +36,10 @@
 export default {
     props: {
         data: {
-            type: Array,
+            type: Object,
         },
         maxrows: {
-            type: Number
+            type: String
         }
     },
     data() {

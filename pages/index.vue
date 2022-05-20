@@ -74,7 +74,28 @@
             </div>
         </section>
 
-        <Social-Table :data="indexCoinList" :head="tableData"/>
+        <section id="list-new-coins" class="section-content">
+            <div class="section-title flex between middle">
+                <n-text type="h4" weight="bold">Social numbers</n-text>
+            </div>
+
+            <section class="flex gap-spacing-xs">
+                <div class="box v24 h32">
+                    <div class="box-title flex middle between">
+                        <n-text type="h6">Twitter followers</n-text>
+                    </div>
+                    <coin-table :data="socialTwitter" maxrows="10"/>
+                </div>
+                <div class="box v24 h32">
+                    <div class="box-title flex middle between">
+                        <n-text type="h6">Github commits</n-text>
+                    </div>
+                    <coin-table :data="socialGithub" maxrows="10"/>
+                </div>
+            </section>
+
+        </section>
+
 
       </main>
 
@@ -83,7 +104,6 @@
 </template>
 
 <script>
-import SocialTable from "../components/SocialTable.vue";
 // Não precisa, o nuxt importa automatico
 // import Header from '../components/Header.vue'
 
@@ -95,13 +115,16 @@ export default {
                 { title: "1 year variation", start: "-2.00", end: "4.00" },
                 { title: "Lifetime variation", start: "-2.00", end: "4.00" },
             ],
+
             aboutIndex: "Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses.",
+            
             indexHighlights: [
                 { title: "Today", value: "3.28" },
                 { title: "7 Days", value: "-3.28" },
                 { title: "Month", value: "-3.28" },
                 { title: "3 Months", value: "-3.28" }
             ],
+
             indexCoinList: [
                 {
                     ranking: "01",
@@ -117,8 +140,6 @@ export default {
                     icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png",
                     ticker: "WOO",
                     category: "DeFi",
-                    follower: 643.123,
-                    growth: 23.53,
                 },
                 {
                     ranking: "02",
@@ -134,8 +155,6 @@ export default {
                     icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4",
                     ticker: "ACH",
                     category: "Mobile",
-                    follower: 543.238,
-                    growth: 13.83,
                 },
                 {
                     ranking: "03",
@@ -151,8 +170,6 @@ export default {
                     icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png",
                     ticker: "WOO",
                     category: "Gaming",
-                    follower: 123.993,
-                    growth: -3.53,
                 },
                 {
                     ranking: "04",
@@ -168,10 +185,9 @@ export default {
                     icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4",
                     ticker: "WOO",
                     category: "Payment",
-                    follower: 872.165,
-                    growth: 70.53,
                 },
             ],
+
             tableData: {
                 tbody: [
                     {
@@ -238,11 +254,64 @@ export default {
                     volume: "24h Volume",
                     circ: "Cic. Supply",
                     weight: "Weight",
-                    followers: "Followers",
-                    growth: "Growth",
-                    project: "Project"
                 },
             },
+
+
+            socialTwitter: {
+                tbody: [
+                    {
+                        ranking: "01", coin: "Woo network", followers: '393.490', growth: '+23.98%',
+                        supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
+                    },
+                    {
+                        ranking: "02", coin: "Anchor Crypto", followers: '393.490', growth: '+23.98%',
+                        supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
+                    },
+                    {
+                        ranking: "03", coin: "Woo network", followers: '393.490', growth: '+23.98%',
+                        supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
+                    },
+                    {
+                        ranking: "04", coin: "Anchor Crypto", followers: '393.490', growth: '+23.98%',
+                        supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
+                    },
+                ],
+                thead: {
+                    ranking: "#",
+                    coin: "Project",
+                    followers: "Followers",
+                    growth: "Growth",
+                },
+            },
+
+            socialGithub: {
+                tbody: [
+                    {
+                        ranking: "01", coin: "Woo network", followers: '393.490', growth: '+23.98%',
+                        supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
+                    },
+                    {
+                        ranking: "02", coin: "Anchor Crypto", followers: '393.490', growth: '+23.98%',
+                        supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
+                    },
+                    {
+                        ranking: "03", coin: "Woo network", followers: '393.490', growth: '+23.98%',
+                        supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
+                    },
+                    {
+                        ranking: "04", coin: "Anchor Crypto", followers: '393.490', growth: '+23.98%',
+                        supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
+                    },
+                ],
+                thead: {
+                    ranking: "#",
+                    coin: "Project",
+                    followers: "Commits",
+                    growth: "Growth",
+                },
+            },
+
         };
     },
     // components: { SocialTable }
