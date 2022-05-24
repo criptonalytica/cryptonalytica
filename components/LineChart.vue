@@ -1,12 +1,12 @@
 <script>
-import {Line} from 'vue-chartjs'
+import { Line } from "vue-chartjs";
 
 export default {
     extends: Line,
-    props: ["chartData"],
+    props: ["chartData", "chartOptions"],
     mounted() {
-        this.renderChart(this.chartData)
-    },
-    
+        this.renderChart(this.chartData, this.chartOptions)
+    }
 }
+
 </script>

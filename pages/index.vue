@@ -19,12 +19,12 @@
                                 <chart-legend color="pink">BTG Change</chart-legend>
                             </div>
                         </div>
-
-                        <img src="~/assets/img/fake-chart-coins.png" alt="fake">
+                        <chart/>
+                        
 
                     </section>
                     <section id="new-coins-numbers" class="flex w100 gap-spacing-2-xs">
-                        <div v-for="item in indexHighlights" class="flex flex-1 box box h24 v24">
+                        <div v-for="item in indexHighlights" :key="item"  class="flex flex-1 box box h24 v24">
                             <div class="icon">
                                 <span v-if="item.value > 0">UP</span>
                                 <span v-else>DOWN</span>
@@ -74,25 +74,28 @@
             </div>
         </section>
 
-        <section id="social-numbers" class="section-content">
+        <section id="list-new-coins" class="section-content">
             <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">Social numbers</n-text>
             </div>
 
             <section class="flex gap-spacing-xs">
                 <div class="box v24 h32">
-                    <div class="box-title flex middle between">
+                    <div class="box-title flex middle ">
+                        <img class="icon" src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter Icon">
                         <n-text type="h6">Twitter followers</n-text>
                     </div>
                     <coin-table :data="socialTwitter" maxrows="10"/>
                 </div>
                 <div class="box v24 h32">
-                    <div class="box-title flex middle between">
+                    <div class="box-title flex middle ">
+                        <img class="icon" src="https://cdn3.iconfinder.com/data/icons/inficons/512/github.png" alt="Github Icon">
                         <n-text type="h6">Github commits</n-text>
                     </div>
                     <coin-table :data="socialGithub" maxrows="10"/>
                 </div>
             </section>
+
         </section>
 
 
@@ -287,26 +290,26 @@ export default {
             socialGithub: {
                 tbody: [
                     {
-                        ranking: "01", coin: "Woo network", commits: '393.490', growth: '+23.98%',
+                        ranking: "01", coin: "Woo network", followers: '393.490', growth: '+23.98%',
                         supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
                     },
                     {
-                        ranking: "02", coin: "Anchor Crypto", commits: '393.490', growth: '+23.98%',
+                        ranking: "02", coin: "Anchor Crypto", followers: '393.490', growth: '+23.98%',
                         supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
                     },
                     {
-                        ranking: "03", coin: "Woo network", commits: '393.490', growth: '+23.98%',
+                        ranking: "03", coin: "Woo network", followers: '393.490', growth: '+23.98%',
                         supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
                     },
                     {
-                        ranking: "04", coin: "Anchor Crypto", commits: '393.490', growth: '+23.98%',
+                        ranking: "04", coin: "Anchor Crypto", followers: '393.490', growth: '+23.98%',
                         supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
                     },
                 ],
                 thead: {
                     ranking: "#",
                     coin: "Project",
-                    commits: "Commits",
+                    followers: "Commits",
                     growth: "Growth",
                 },
             },
@@ -327,4 +330,12 @@ export default {
             margin-bottom: var(--spacing-xl);
         }
     }
+
+    .icon {
+        max-width: var(--text-h2-font-size);
+        max-height: var(--text-h2-font-size);
+        border-radius: var(--border-radius-xs);
+        margin-right: var(--spacing-3-xs);
+    }
+
 </style>
