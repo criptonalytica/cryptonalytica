@@ -19,7 +19,7 @@
                                 <chart-legend color="pink">BTG Change</chart-legend>
                             </div>
                         </div>
-                        <chart/>
+                        <chart />
                         
 
                     </section>
