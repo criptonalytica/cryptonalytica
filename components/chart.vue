@@ -5,7 +5,14 @@
 </template>
 
 <script>
+
 export default {
+    props: {
+        dataNC: {
+            type: Object
+        },
+        dataBTC
+    },
      data() {
         return {
             chartData: {
@@ -38,12 +45,18 @@ export default {
                 chartOptions: {
                     maintainAspectRatio: false,
                     responsive: true,
+                    title: {
+                        display: true,
+                        text: 'New Coins launch',
+                        align: 'start'
+                    },
                     scales: {
                         xAxes: [{
                             ticks: {
+                                beginAtZero: true,
                                 padding: 18,
                                 max: 7,
-                                color: '#EFF1F2'
+                                color: '#808589',
                             },
                             gridLines: {
                                 drawBorder: false,
@@ -51,7 +64,12 @@ export default {
                             },
                         }],
                         yAxes: [{
+                            grace: '10%',
+                            beginAtZero: true,
                             ticks: {
+                                callback: function(value) {
+                                    return `${value}%`; 
+                                },
                                 padding: 18,
                             },
                             gridLines: {
@@ -61,10 +79,7 @@ export default {
                             }
                         }]
                     },
-                    title: {
-                        display: true,
-                        text: 'New Coins launch',
-                    },
+                    
                     legend: {
                         align: 'end',
                         labels: {

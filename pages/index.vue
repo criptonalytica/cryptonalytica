@@ -19,7 +19,7 @@
                                 <chart-legend color="pink">BTG Change</chart-legend>
                             </div>
                         </div>
-                        <chart />
+                        <chart :dataNC="dataNC"  :dataBTC="dataBTC" />
                         
 
                     </section>
@@ -112,6 +112,9 @@
 export default {
     data() {
         return {
+            dataNC: [40, 20, 92, 43, 72, 31, 86, 92, 61, 60, 89.4, 80],
+            dataBTC: [70, 10, 0, 20, 30, 20, 29, 54, 50, 53, 56, 90],
+
             indexDetails: [
                 { title: "Index value", value: "1.200" },
                 { title: "1 year variation", start: "-2.00", end: "4.00" },
