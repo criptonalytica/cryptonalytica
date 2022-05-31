@@ -12,14 +12,7 @@
             <section class="flex gap-spacing-xs">
                 <section class="flex column gap-spacing-2-xs flex-1">
                     <section id="new-coins-launch" class="box h32 v24 w100">
-                        <div class="box-title flex middle between">
-                            <n-text type="h6" weight="medium">New coins launch</n-text>
-                            <div class="flex gap-spacing-m">
-                                <chart-legend color="primary">New coin</chart-legend>
-                                <chart-legend color="pink">BTG Change</chart-legend>
-                            </div>
-                        </div>
-                        <chart :dataNC="dataNC"  :dataBTC="dataBTC" />
+                        <chart />
                         
 
                     </section>
@@ -57,7 +50,7 @@
                         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
                     </div>
 
-                    <coin-list-cards :data="indexCoinList">
+                    <coin-list-cards :data="indexCoinList" :BTCData="BTCData">
 
                     </coin-list-cards>
             </section>
@@ -94,8 +87,9 @@
                     </div>
                     <coin-table :data="socialGithub" maxrows="10"/>
                 </div>
+                
             </section>
-
+        <Footer />
         </section>
 
 
@@ -112,8 +106,9 @@
 export default {
     data() {
         return {
-            dataNC: [40, 20, 92, 43, 72, 31, 86, 92, 61, 60, 89.4, 80],
-            dataBTC: [70, 10, 0, 20, 30, 20, 29, 54, 50, 53, 56, 90],
+
+            newCoinData: [40, 45, 65, 54, 32, 20, 92, 43, 72, 31, 86, 92, 61, 60, 89.4, 80],
+            BTCData: [70,60, 55, 59, 64, 30, 21, 10, 0, 20, 30, 20, 29, 54, 50, 53, 56, 90],
 
             indexDetails: [
                 { title: "Index value", value: "1.200" },
