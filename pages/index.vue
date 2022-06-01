@@ -89,13 +89,11 @@
                 </div>
                 
             </section>
-        <Footer />
         </section>
-
-
       </main>
+    <Footer />
 
-      <br><br><br><br>
+      <!-- <br><br><br><br> -->
     </section>
 </template>
 
