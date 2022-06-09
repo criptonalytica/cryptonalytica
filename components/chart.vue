@@ -7,7 +7,7 @@
                 <chart-legend color="pink">BTG Change</chart-legend>
             </div>
         </div>
-        {{BTCData}}
+        
 
         <lineChart :chartData="chartData" :chartOptions="chartOptions" />
     </section>
@@ -17,12 +17,8 @@
 
 export default {
     props: {
-        newCoinData: {
-            type: Object
-        },
-        BTCData :{
-            type: Object
-        }
+        newCoinData: Object,
+        BTCData : Object 
     },
     data() {
         return {
@@ -35,7 +31,7 @@ export default {
                             borderColor: "#4d4dff",
                             borderWidth: 3,
                             fill: false,
-                            data: [40, 45, 65, 54, 32, 20, 92, 43, 72, 31, 86, 92, 61, 60, 89.4, 80],
+                            data: this.newCoinData,
                             tension: 0.1,
                             pointRadius: 0,
                             pointHoverRadius: 0,
@@ -46,7 +42,7 @@ export default {
                             borderColor: '#f473b9',
                             borderWidth: 3,
                             fill: false,
-                            data: [70, 60, 55, 59, 64, 30, 21, 10, 0, 20, 30, 20, 29, 54, 50, 53, 56, 90],
+                            data: this.BTCData,
                             tension: 0.1,
                             pointRadius: 0,
                             pointHoverRadius:0,
@@ -112,6 +108,14 @@ export default {
                 }
             }
         },
+    // computed: {
+    //     splitNewCoinData: function() {
+    //         return Object.values(this.newCoinData)
+    //     },
+    //     splitBTCData: ()=>{
+    //         return Object.keys(this.BTCData)
+    //     }
+    // },
     methods: {
         NCoin: function() {
             this.chartData = {

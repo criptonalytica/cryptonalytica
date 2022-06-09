@@ -12,7 +12,7 @@
             <section class="flex gap-spacing-xs">
                 <section class="flex column gap-spacing-2-xs flex-1">
                     <section id="new-coins-launch" class="box h32 v24 w100">
-                        <chart />
+                        <chart :BTCData="BTCData" :newCoinData="newCoinData"/>
                         
 
                     </section>
