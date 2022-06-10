@@ -3,8 +3,10 @@
         <div class="card-title">
             <n-text type="h6">Index details</n-text>
         </div>
-        <div class="list">
-            {{data}}
+        <div id="detais" class="flex between" v-for="item in data" :key="item">
+            <p> {{ item.title }} </p>
+            <span>{{item.value}} pts</span>
+            <span> {{item.start}} / {{ item.end }} </span>
         </div>
     </div>
 </template>
@@ -28,4 +30,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  p{
+    color: var(--color-grey-6);
+    font-size: var(--text-p14-font-size);
+    line-height: var(--text-s-line-height);
+  }
+  #detais {
+    padding: var(--spacing-xs) 0;
+    border-top: 1px solid #EFF1F2;
+    span{
+      color: var(--color-text);
+      font-weight: var(--text-weight-medium);
+    }
+  }
 </style>

@@ -67,6 +67,13 @@
             </div>
         </section>
 
+        <section class="top-spacing-5-xl">
+            <div>
+                <p id="categoryTitle">Performance by categories</p>
+                <category class="top-spacing-l" :indexCoinList="indexCoinList"/>
+            </div>
+        </section>
+
         <section id="list-new-coins" class="section-content">
             <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">Social numbers</n-text>
@@ -127,9 +134,9 @@ export default {
                 {
                     ranking: "01",
                     name: "Woo network",
-                    price: 118,
-                    oneDay: "+2.32",
-                    sevenDays: "-4.12",
+                    price: 118.49,
+                    oneDay: +2.32,
+                    sevenDays: -4.12,
                     start: "Mar, 2022",
                     market: 28,
                     volume: "16",
@@ -142,9 +149,9 @@ export default {
                 {
                     ranking: "02",
                     name: "Anchor Crypto",
-                    price: 203,
-                    oneDay: "+2.32",
-                    sevenDays: "-4.12",
+                    price: 203.49,
+                    oneDay: +2.32,
+                    sevenDays: -4.12,
                     start: "Feb, 2022",
                     market: 28,
                     volume: "16",
@@ -157,9 +164,9 @@ export default {
                 {
                     ranking: "03",
                     name: "Woo network",
-                    price: 322,
-                    oneDay: "+2.32",
-                    sevenDays: "-4.12",
+                    price: 322.45,
+                    oneDay: -2.32,
+                    sevenDays: +4.12,
                     start: "Mar, 2022",
                     marketcap: "28M",
                     volume: "16",
@@ -172,9 +179,9 @@ export default {
                 {
                     ranking: "04",
                     name: "Anchor Crypto",
-                    price: 203,
-                    oneDay: "+2.32",
-                    sevenDays: "-4.12",
+                    price: 203.49,
+                    oneDay: -1.32,
+                    sevenDays: +2.12,
                     start: "Feb, 2022",
                     marketcap: "28M",
                     volume: "16",
@@ -183,6 +190,21 @@ export default {
                     icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4",
                     ticker: "WOO",
                     category: "Payment",
+                },
+                {
+                    ranking: "05",
+                    name: "Solano Network",
+                    price: 280.918,
+                    oneDay: +2.32,
+                    sevenDays: -2.92,
+                    start: "Mar, 2022",
+                    market: 28,
+                    volume: "16",
+                    circ: "54M",
+                    weight: "11%",
+                    icon: "https://upload.wikimedia.org/wikipedia/en/b/b9/Solana_logo.png",
+                    ticker: "SLN",
+                    category: "Web3",
                 },
             ],
 
@@ -317,6 +339,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>    
+    #categoryTitle {
+        font-weight: var(--text-weight-bold);
+        font-size: var(--text-h4-font-size);
+        color: var(--color-black); 
+    }
+
     #index-info {
         max-width: 352px;
     }
