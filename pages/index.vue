@@ -12,7 +12,7 @@
             <section class="flex gap-spacing-xs">
                 <section class="flex column gap-spacing-2-xs flex-1">
                     <section id="new-coins-launch" class="box h32 v24 w100">
-                        <chart :BTCData="BTCData" :newCoinData="newCoinData"/>
+                        <chart :data="newCoinLaunchData"/>
                         
 
                     </section>
@@ -50,7 +50,7 @@
                         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
                     </div>
 
-                    <coin-list-cards :data="indexCoinList" :BTCData="BTCData">
+                    <coin-list-cards :data="indexCoinList">
 
                     </coin-list-cards>
             </section>
@@ -112,8 +112,38 @@ export default {
     data() {
         return {
 
-            newCoinData: [40, 45, 65, 54, 32, 20, 92, 43, 72, 31, 86, 92, 61, 60, 89.4, 80],
-            BTCData: [70,60, 55, 59, 64, 30, 21, 10, 0, 20, 30, 20, 29, 54, 50, 53, 56, 90],
+            newCoinLaunchData: [
+                {
+                    label: 'New coin',
+                    backgroundColor: '#4d4dff',
+                    borderColor: "#4d4dff",
+                    borderWidth: 3,
+                    fill: false,
+                    data: [70,60, 55, 59, 64, 30, 21, 10, 0, 20, 30, 20, 29, 54, 50, 53, 56, 90],
+                },
+                {
+                    label: "BTC Change",
+                    backgroundColor: '#f473b9',
+                    borderColor: '#f473b9',
+                    borderWidth: 3,
+                    fill: false,
+                    data: [40, 45, 65, 54, 32, 20, 92, 43, 72, 31, 86, 92, 61, 60, 89.4, 80],
+                }
+            ],
+
+        
+            /*categories: [
+                gaming: {
+                    data: [1,2,23,123,1,2]
+                    labem:  'gaming',
+                    color: '#000'
+                }
+                mobile: {
+                    data: [1,2,23,123,1,2]
+                    labem:  'gaming',
+                    color: '#000'
+                }
+            ],*/
 
             indexDetails: [
                 { title: "Index value", value: "1.200" },

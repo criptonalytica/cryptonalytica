@@ -1,7 +1,7 @@
 <template>
-<section class="flex">
-    <div id="main" v-for="item in indexCoinList" :key="item" >
-        <div id="category" >
+<section class="flex gap-spacing-xs category-grid">
+    <div class="category-item" v-for="item in indexCoinList" :key="item" >
+        <div class="category-name" >
             <span v-if="item.category ==='Gaming'" style="color: var(--color-green)">{{item.category}}</span>
             <span v-if="item.category ==='DeFi'" style="color: var(--color-pink)">{{item.category}}</span>
             <span v-if="item.category ==='Mobile'" style="color: var(--color-red)">{{item.category}}</span>
@@ -46,13 +46,13 @@ section {
     border-top: 1px solid var(--color-grey-1);
 }
 
-#main {
+.category-item {
     border: 1px solid var(--color-grey-1);
     border-radius: var(--spacing-4-xs);
-    background-color: var(--color-white);
-    margin-right: var(--spacing-xs);
-    padding: 16px 24px 20px; // tá quebrando a linha do campo {{item.name}}
-    #category{
+    background-color: var(--color-white);       
+    padding: 16px 24px 20px; 
+
+    .category-name {
         font-weight: var(--text-weight-medium);
         font-size: var(--text-s12-font-size);
     }

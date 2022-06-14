@@ -5,8 +5,8 @@
         </div>
         <div id="detais" class="flex between" v-for="item in data" :key="item">
             <p> {{ item.title }} </p>
-            <span>{{item.value}} pts</span>
-            <span> {{item.start}} / {{ item.end }} </span>
+            <span v-if="item.value">{{item.value}} pts</span>
+            <span v-else>{{item.start}}% <span class="sep">/</span>  {{ item.end }}%</span>
         </div>
     </div>
 </template>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  p{
+  p {
     color: var(--color-grey-6);
     font-size: var(--text-p14-font-size);
     line-height: var(--text-s-line-height);
@@ -41,6 +41,7 @@ export default {
     span{
       color: var(--color-text);
       font-weight: var(--text-weight-medium);
+      .sep {color: var(--color-grey-2);}
     }
   }
 </style>
