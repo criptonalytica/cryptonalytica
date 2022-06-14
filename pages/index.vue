@@ -39,6 +39,9 @@
                         </div>
                         <article>
                             <p>Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses. </p>
+                            <div class="flex center middle">
+                                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">Learn more</n-button>
+                            </div>
                         </article>
                     </div>
                 </section>
@@ -46,7 +49,10 @@
             
             <section class="top-spacing-xs box h32 v24">
                     <div class="box-title flex middle between">
-                        <n-text type="h6">Index coin list</n-text>
+                        <div class="flex middle">
+                            <n-text type="h6">Index coin list</n-text>
+                            <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
+                        </div>
                         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
                     </div>
 
@@ -69,7 +75,13 @@
 
         <section class="top-spacing-5-xl">
             <div>
-                <p id="categoryTitle">Performance by categories</p>
+                <div class="flex between">
+                    <div class="flex">
+                        <p id="categoryTitle" >Performance by categories</p>
+                        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
+                    </div>
+                    <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+                </div>
                 <category class="top-spacing-l" :indexCoinList="indexCoinList"/>
             </div>
         </section>
@@ -105,10 +117,12 @@
 </template>
 
 <script>
+import nButton from '../assets/ds/nButton.vue';
 // Não precisa, o nuxt importa automatico
 // import Header from '../components/Header.vue'
 
 export default {
+  components: { nButton },
     data() {
         return {
 
@@ -339,6 +353,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>    
+    article {
+        div{
+            margin-top: var(--spacing-xl);
+            padding-top:17px;
+            border-top: 1px solid var(--color-grey-1);;
+        }
+    }
+
     #categoryTitle {
         font-weight: var(--text-weight-bold);
         font-size: var(--text-h4-font-size);

@@ -1,6 +1,6 @@
 <template>
 <section class="flex">
-    <div id="main" v-for="item in indexCoinList" :key="item" >
+    <div class="main" v-for="item in indexCoinList" :key="item" >
         <div id="category" >
             <span v-if="item.category ==='Gaming'" style="color: var(--color-green)">{{item.category}}</span>
             <span v-if="item.category ==='DeFi'" style="color: var(--color-pink)">{{item.category}}</span>
@@ -46,7 +46,7 @@ section {
     border-top: 1px solid var(--color-grey-1);
 }
 
-#main {
+.main {
     border: 1px solid var(--color-grey-1);
     border-radius: var(--spacing-4-xs);
     background-color: var(--color-white);
