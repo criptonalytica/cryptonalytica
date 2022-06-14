@@ -1,7 +1,10 @@
 <template>
     <section>
         <div class="box-title flex middle between">
-            <n-text type="h6" weight="medium">New coins launch</n-text>
+            <div class="flex middle">
+                <n-text type="h6" weight="medium">New coins launch</n-text>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
+            </div>
             <div class="flex gap-spacing-m">
                 <div>
                     <chart-legend color="primary">New coin</chart-legend>
