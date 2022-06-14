@@ -1,6 +1,6 @@
 <template>
-    <section>
-        <div class="box-title flex middle between">
+    <section class="chart-section h100 flex column">
+        <div class="box-title w100 flex middle between">
             <div class="flex middle">
                 <n-text type="h6" weight="medium">New coins launch</n-text>
                 <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
@@ -15,8 +15,8 @@
             </div>
         </div>
 
-        <div id="chart-container">
-            <lineChart :chartData="chartData" :chartOptions="chartOptions" />
+        <div id="chart-container" class="w100 flex-1">
+            <lineChart :chartData="chartData" :chartOptions="chartOptions" height="300" />
         </div>
     </section>
 </template>
@@ -119,9 +119,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    div {
-        max-width: 829px;
-        max-height: 439px;
+    #chart-container div {
+        height: 100%;
     }
 
     #chart-container {

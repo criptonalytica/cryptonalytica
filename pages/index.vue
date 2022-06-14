@@ -5,44 +5,35 @@
       <main class="container">
         <section id="new-coins-index" class="section-content">
             <div class="section-title flex between middle">
-                <n-text type="h4" weight="bold">Esse é um texto h2</n-text>
+                <n-text type="h4" weight="bold">New coins index</n-text>
                 <n-button size="small" hierarchy="secondary" icon="question-circle">What is this?</n-button>
             </div>
 
-            <section class="flex gap-spacing-xs">
+            <section class="flex gap-spacing-xs stretch">
                 <section class="flex column gap-spacing-2-xs flex-1">
-                    <section id="new-coins-launch" class="box h32 v24 w100">
+                    <section id="new-coins-launch" class="box h32 v24 w100 flex-1">
                         <chart :data="newCoinLaunchData"/>
-                        
+                    </section>
+                    
+                    <number-highlight id="new-coins-numbers" :data="indexHighlights"></number-highlight>
 
-                    </section>
-                    <section id="new-coins-numbers" class="flex w100 gap-spacing-2-xs">
-                        <div v-for="item in indexHighlights" :key="item"  class="flex flex-1 box box h24 v24">
-                            <div class="icon">
-                                <span v-if="item.value > 0">UP</span>
-                                <span v-else>DOWN</span>
-                            </div>
-                            <div class="text">
-                                <h4>{{item.title}}</h4>
-                                <span class="number up">{{item.value}}</span>
-                            </div>
-                        </div>
-                    </section>
                 </section>
                 <section id="index-info" class="flex column gap-spacing-2-xs">
 
                     <index-details :data="indexDetails"></index-details>
 
-                    <div id="index-about" class="box h32 v24">
-                        <div class="box-title">
-                            <n-text type="h6">About index</n-text>
-                        </div>
-                        <article>
-                            <p>Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses. </p>
-                            <div class="flex center middle">
-                                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">Learn more</n-button>
+                    <div id="index-about" class="box h32 v24 flex column flex-1 between">
+                        <div class="content">
+                            <div class="box-title">
+                                <n-text type="h6">About index</n-text>
                             </div>
-                        </article>
+                            <article>
+                                <p>Índice Bovespa é o mais importante indicador do desempenho médio das cotações das ações negociadas na B3 - Brasil, Bolsa, Balcão. É formado pelas ações com maior volume negociado nos últimos meses.</p>
+                            </article>
+                        </div>
+                        <div class="button flex w100 center middle">
+                            <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">Learn more</n-button>
+                        </div>
                     </div>
                 </section>
             </section>
@@ -56,7 +47,7 @@
                         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
                     </div>
 
-                    <coin-list-cards :data="indexCoinList">
+                    <coin-list-cards :data="indexCoinList" max="4">
 
                     </coin-list-cards>
             </section>
@@ -381,37 +372,3 @@ export default {
     // components: { SocialTable }
 }
 </script>
-
-<style lang="scss" scoped>    
-    article {
-        div{
-            margin-top: var(--spacing-xl);
-            padding-top:17px;
-            border-top: 1px solid var(--color-grey-1);;
-        }
-    }
-
-    #categoryTitle {
-        font-weight: var(--text-weight-bold);
-        font-size: var(--text-h4-font-size);
-        color: var(--color-black); 
-    }
-
-    #index-info {
-        max-width: 352px;
-    }
-
-    #new-coins-launch {
-        .box-title {
-            margin-bottom: var(--spacing-xl);
-        }
-    }
-
-    .icon {
-        max-width: var(--text-h2-font-size);
-        max-height: var(--text-h2-font-size);
-        border-radius: var(--border-radius-xs);
-        margin-right: var(--spacing-3-xs);
-    }
-
-</style>

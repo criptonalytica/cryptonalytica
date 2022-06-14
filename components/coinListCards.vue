@@ -1,6 +1,6 @@
 <template>
     <section class="coin-container gap-spacing-s">
-        <div class="coin-item" v-for="coin in data" :key="coin">
+        <div class="coin-item" v-for="(coin,index) in data" v-if="index<max" :key="coin">
             <div class="head flex between">
                 <div class="coin flex middle">
                     <div class="icon"><img :src="coin.icon"></div>
@@ -60,7 +60,7 @@ export default {
         data: {
             type: Array,
         },
-        propy: {
+        max: {
             type: Number
         }
     },

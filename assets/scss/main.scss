@@ -35,6 +35,13 @@ body {
     .box-title, .card-title {
         margin-bottom: var(--spacing-s);
         .typography {color: var(--color-text);}
+
+        .icon {
+            max-width: 28px;
+            max-height: 28px;
+            border-radius: var(--border-radius-xs);
+            margin-right: var(--spacing-3-xs);
+        }
     }
 }
 
@@ -80,3 +87,38 @@ body {
 .top-spacing-4-xl {  margin-top: var(--spacing-4-xl); }
 .top-spacing-5-xl {  margin-top: var(--spacing-5-xl); }
 .top-spacing-6-xl {  margin-top: var(--spacing-6-xl); }
+
+article {
+    p + p {margin-top: var(--spacing-s);}
+}
+
+#index-about {
+    article {
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .button {
+        margin-top: var(--spacing-xl);
+        padding-top: var(--spacing-xs);
+        border-top: 1px solid var(--color-grey-1);;
+    }
+}
+
+#categoryTitle {
+    font-weight: var(--text-weight-bold);
+    font-size: var(--text-h4-font-size);
+    color: var(--color-black); 
+}
+
+#index-info {
+    max-width: 352px;
+}
+
+#new-coins-launch {
+    .box-title {
+        margin-bottom: var(--spacing-xl);
+    }
+}
