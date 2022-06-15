@@ -47,7 +47,7 @@
                         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
                     </div>
 
-                    <coin-list-cards :data="indexCoinList" max="4">
+                    <coin-list-cards :data="indexCoinList" :max="4">
 
                     </coin-list-cards>
             </section>
@@ -64,20 +64,32 @@
             </div>
         </section>
 
-        <section class="top-spacing-5-xl">
-            <div>
-                <div class="flex between">
-                    <div class="flex">
-                        <p id="categoryTitle" >Performance by categories</p>
-                        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
-                    </div>
-                    <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+        <section id="performance-by-category" class="section-content">
+            <div class="section-title flex between middle">
+                <div class="text flex">
+                    <p id="categoryTitle">Performance by categories</p>
+                    <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
                 </div>
-                <category class="top-spacing-l" :indexCoinList="indexCoinList"/>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
             </div>
+            <category class="top-spacing-m" :indexCoinList="indexCoinList"/>
         </section>
 
-        <section id="list-new-coins" class="section-content">
+        <section id="vcs-portfolio" class="section-content">
+            
+            <portfolio-composition></portfolio-composition>
+
+            <!-- <div class="section-title flex between middle">
+                <div class="text flex">
+                    <p id="categoryTitle">VCs Portfolio composition</p>
+                    <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
+                </div>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+            </div>
+            <category class="top-spacing-m" :indexCoinList="indexCoinList"/> -->
+        </section>
+
+        <section id="social-numbers" class="section-content">
             <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">Social numbers</n-text>
             </div>
@@ -108,12 +120,13 @@
 </template>
 
 <script>
+import PortfolioComposition from '~/components/portfolioComposition.vue';
 import nButton from '../assets/ds/nButton.vue';
 // Não precisa, o nuxt importa automatico
 // import Header from '../components/Header.vue'
 
 export default {
-  components: { nButton },
+  components: { nButton, PortfolioComposition },
     data() {
         return {
 
@@ -243,6 +256,8 @@ export default {
                 },
             ],
 
+            // Exemplo de Json que gera a tabela
+            // List of new coins
             tableData: {
                 tbody: [
                     {
@@ -286,6 +301,32 @@ export default {
                     },
                     {
                         ranking: "04",
+                        coin: "Anchor Crypto",
+                        price: 203,
+                        oneDay: "+2.32",
+                        sevenDays: "-4.12",
+                        start: "Feb, 2022",
+                        marketcap: "28M",
+                        volume: 16,
+                        circ: 54,
+                        weight: 11,
+                        supports: { icon: "https://avatars.githubusercontent.com/u/67821563?s=280&v=4", ticker: "WOO" }
+                    },
+                    {
+                        ranking: "05",
+                        coin: "Woo network",
+                        price: 322,
+                        oneDay: "+2.32",
+                        sevenDays: "-4.12",
+                        start: "Mar, 2022",
+                        marketcap: "28M",
+                        volume: 16,
+                        circ: 54,
+                        weight: 11,
+                        supports: { icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png", ticker: "WOO" }
+                    },
+                    {
+                        ranking: "06",
                         coin: "Anchor Crypto",
                         price: 203,
                         oneDay: "+2.32",

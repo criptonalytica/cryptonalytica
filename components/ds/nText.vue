@@ -48,6 +48,7 @@ export default {
         font-weight: var(--text-weight-medium);
         color: inherit;
         .regular & {font-weight: var(--text-weight-regular);}
+        .medium & {font-weight: var(--text-weight-medium);}
         .bold & {font-weight: var(--text-weight-bold);}
     }
 

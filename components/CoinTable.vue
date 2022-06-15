@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="coinTable">
         <table>
             <thead>
                 <tr>
@@ -87,6 +87,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .coinTable {
+        padding-bottom: var(--spacing-2-xs);
+    }
+
     table {
         // table-layout: fixed;
         width: 100%;
