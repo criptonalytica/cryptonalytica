@@ -16,7 +16,7 @@
         </div>
 
         <div id="chart-container" class="w100 flex-1">
-            <lineChart :chartData="chartData" :chartOptions="chartOptions" height="300" />
+            <lineChart :chartData="chartData" :chartOptions="chartOptions" :height="300"/>
         </div>
     </section>
 </template>
