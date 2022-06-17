@@ -12,7 +12,7 @@
             <section class="flex gap-spacing-xs stretch">
                 <section class="flex column gap-spacing-2-xs flex-1">
                     <section id="new-coins-launch" class="box h32 v24 w100 flex-1">
-                        <chart :data="newCoinLaunchData"/>
+                        <coinsLaunchChart :data="newCoinLaunchData"/>
                     </section>
                     
                     <number-highlight id="new-coins-numbers" :data="indexHighlights"></number-highlight>
@@ -77,6 +77,10 @@
             </div>
         </section>
 
+        <section>
+            <categoryCompare :data="compareCoins"/>
+        </section>
+
         <section id="list-new-coins" class="section-content">
             <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">Social numbers</n-text>
@@ -136,6 +140,36 @@ export default {
                 }
             ],
 
+            compareCoins: [
+                    {
+                        label:'Gaming',
+                        data: [40,10,20,50,63,80,23,56,76,80,42],
+                        backgroundColor:'#5CC38A',
+                        borderColor:'#5CC38A',
+                        variation: -4.23,
+                    },
+                    {
+                        label:'DeFi',
+                        data: [40,40,10,5,3,8,23,56,61,90,42],
+                        backgroundColor:'#F473B9',
+                        borderColor:'#F473B9',
+                        variation: -1.23,
+                    },
+                    {
+                        label:'Mobile',
+                        data: [60,11,24,56,62,12,26,52,96,80,31],
+                        backgroundColor:'#E55758',
+                        borderColor:'#E55758',
+                        variation: 4.23,
+                    },
+                    {
+                        label:'Payment',
+                        data: [80,23,56,76,80,42,40,10,20,50,63],
+                        backgroundColor:'#1F9EFF',
+                        borderColor:'#1F9EFF',
+                        variation: 2.23,
+                    },
+            ],
         
             /*categories: [
                 gaming: {
