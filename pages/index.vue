@@ -75,14 +75,12 @@
             <category class="top-spacing-m" :indexCoinList="indexCoinList"/>
         </section>
 
-<<<<<<< HEAD
         <section>
             <categoryCompare :data="compareCoins"/>
         </section>
 
-        <section id="list-new-coins" class="section-content">
-=======
-        <section id="vcs-portfolio" class="section-content">
+        <!-- <section id="list-new-coins" class="section-content"> -->
+        <section id="vcs-portfolio" class="section-content top-spacing-4-xl">
             
             <portfolio-composition></portfolio-composition>
 
@@ -97,7 +95,6 @@
         </section>
 
         <section id="social-numbers" class="section-content">
->>>>>>> 0ab2795ddc9c46c14edfe355845930647cbd0107
             <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">Social numbers</n-text>
             </div>
