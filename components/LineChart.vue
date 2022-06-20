@@ -6,8 +6,13 @@ export default {
   extends: Line,
   mixins: [mixins.reactiveProp],
   props: ['chartData', 'chartOptions'],
+  data() {
+    return {
+    }
+  },
   mounted () {
     this.renderChart(this.chartData, this.chartOptions)
-  }
+    this.$emit('sendLegend', this.generateLegend())
+  },
 }
 </script>

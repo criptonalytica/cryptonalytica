@@ -1,38 +1,36 @@
 <template>
-  <section >
-    <div class="container ">
-        <div class="flex between middle header ">
-            <p>Compare categories</p>
+  <section class="top-spacing-xs box">
+        <div class="box-title h32 v24 flex middle between header">
+            <n-text type="h6">Compare categories</n-text>
             <n-button size="small" hierarchy="secondary" icon="question-circle">Learn more</n-button>
         </div>
-        <div class="flex category top-spacing-m gap-spacing-m">
-            <div>
+        <div class="flex stretch">
+            <div class="categories-sidebar v24">
                 <div class="flex middle gap-spacing-3-xs">
                     <img src="~/assets/img/mouse.svg" alt="Mouse icon">
                     <span>Select a category to compare</span>
                 </div>
-                <div  v-for="item in this.data" :key="item" :style="{ 'border-left': '2px solid' + item.borderColor}">
+                <div  v-for="item in this.data" :key="item.label" :style="{ 'border-left': '2px solid' + item.borderColor}">
                     <div class="flex top-spacing-3-xs between middle categories ">
                         <p>{{item.label}}</p>
                         <span>{{item.variation}}</span>
                     </div>
                 </div>
             </div>
-            <section class=" chart-section h100 flex column">
-                <div class="box-title w100 flex middle between">
-                    <div class="flex gap-spacing-m top-spacing-l">
-                        <div v-for="item in data" :key="item">
-                            <chart-legend >{{item.label}}</chart-legend>
-                        </div>
+            <section class="chart-section flex-1 flex column">
+                <div class="flex middle">
+                    <div class="flex gap-spacing-m">
+                        <chart-legend v-for="item in data" :color="item.backgroundColor" :key="item.label">
+                            {{item.label}}
+                        </chart-legend>
                     </div>
                 </div>
 
-                <div id="chart-container " class="w100 flex-1 top-spacing-xl">
-                    <lineChart :chartData="chartData" :chartOptions="chartOptions" height="300" />
+                <div id="chart-container" class="w100 flex-1 top-spacing-l">
+                    <lineChart :chartData="chartData" :chartOptions="chartOptions" :height="300" />
                 </div>
             </section>
         </div>
-    </div>
   </section>
 </template>
 
@@ -101,32 +99,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
- #chart-container div {
-        width: 770px;
-        // width:100%;
-        height: 100%;
-    }
 
-.header {
-        p{
-            height: var(--spacing-s);
-            font-weight:var(--text-weight-medium);
-            font-size: var(--text-p16-font-size);
-            color:var(--color-text);
-
-        }
-    }
-    section {
-        background-color: var(--color-white);
-        section {
-            border-left: 1px solid var(--color-grey-1 );
-        }
-            p {
-                color:var(--color-text);
-            }
-        > div {
-            padding-left: var(--spacing-l);
-        }
+    .header {
+        border-bottom: 1px solid var(--color-grey-1);
+        margin-bottom: 0;
     }
 
     #chart-container {
@@ -141,25 +117,20 @@ export default {
         }
     }
 
-.container{
-    max-width: 1116px; 
-    margin: auto; 
-    padding: 24px 24px 0 24px;
-
-}
-
-.category{
-    border-top: 1px solid var(--color-grey-1);
-    margin-right:24px;
-    > div {
-        padding-top:24px;
+    .chart-section {
+        padding: var(--spacing-m) var(--spacing-l);
     }
-}
+
+    .categories-sidebar {
+        width: 30%;
+        max-width: 320px;
+        min-width: 200px;
+        border-right: 1px solid var(--color-grey-1);
+        padding: var(--spacing-m);
+    }
+
     .categories {
-        box-sizing:border-box;
         box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.04);
-        width: 272px;
-        height: 51px;
         padding: 16px 17px 17px 24px; 
     }
 

@@ -142,7 +142,7 @@ export default {
                     borderColor: "#4d4dff",
                     borderWidth: 3,
                     fill: false,
-                    data: [70,60, 55, 59, 64, 30, 21, 10, 0, 20, 30, 20, 29, 54, 50, 53, 56, 90],
+                    data: [64, 30, 13, 30, 40, 20, 30, 20, 29, 54, 50],
                 },
                 {
                     label: "BTC Change",
@@ -150,7 +150,7 @@ export default {
                     borderColor: '#f473b9',
                     borderWidth: 3,
                     fill: false,
-                    data: [40, 45, 65, 54, 32, 20, 92, 43, 72, 31, 86, 92, 61, 60, 89.4, 80],
+                    data: [40, 45, 65, 54, 32, 20, 50, 43, 72, 31, 86],
                 }
             ],
 

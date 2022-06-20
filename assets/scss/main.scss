@@ -27,10 +27,10 @@ body {
     width: 100%;
     // padding: var(--spacing-m);
 
-    &.h32 {padding-left: var(--spacing-l); padding-right: var(--spacing-l);}
-    &.h24 {padding-left: var(--spacing-m); padding-right: var(--spacing-m);}
-    &.v24 {padding-top: var(--spacing-m); padding-bottom: var(--spacing-m);}
-    &.v16 {padding-top: var(--spacing-xs); padding-bottom: var(--spacing-xs);}
+    &.h32, .h32 {padding-left: var(--spacing-l); padding-right: var(--spacing-l);}
+    &.h24, .h24 {padding-left: var(--spacing-m); padding-right: var(--spacing-m);}
+    &.v24, .v24 {padding-top: var(--spacing-m); padding-bottom: var(--spacing-m);}
+    &.v16, .v16 {padding-top: var(--spacing-xs); padding-bottom: var(--spacing-xs);}
 
     .box-title, .card-title {
         margin-bottom: var(--spacing-s);

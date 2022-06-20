@@ -1,6 +1,6 @@
 <template>
   <div class="legend flex middle">
-      <div :class="['square', color]"></div>
+      <div class="square" :style="{backgroundColor : color}"></div>
       <span><slot></slot></span>
   </div>
 </template>
@@ -26,14 +26,7 @@ export default {
         height: 12px;
         background: var(--color-primary);
         border-radius: var(--border-radius-xs);
-        margin-right: var(--spacing-3-xs);
-        
-        &.green  {background: var(--color-green);}
-        &.red    {background: var(--color-red);}
-        &.blue   {background: var(--color-blue);}
-        &.yellow {background: var(--color-yellow);}
-        &.pink   {background: var(--color-pink);}
-        &.orange {background: var(--color-orange);}
+        margin-right: var(--spacing-3-xs);   
     }
 
     font-size: var(--text-s12-font-size);
