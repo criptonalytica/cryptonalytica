@@ -1,6 +1,5 @@
 <script>
 import { Line, mixins } from 'vue-chartjs'
-// import annotationPlugin from 'chartjs-plugin-annotation';
 
 
 export default {

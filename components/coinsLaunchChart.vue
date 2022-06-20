@@ -36,22 +36,6 @@ export default {
                 chartOptions: {
                     maintainAspectRatio: false,
                     responsive: true,
-                    title: {
-                        display: false,
-                        text: 'New Coins launch',
-                        align: 'start'
-                    },
-                    annotation: {
-                         annotations: {
-                            line1: {
-                                type: 'line',
-                                xMin: 0,
-                                xMax:0,
-                                borderColor: 'rgb(255, 99, 132)',
-                                borderWidth: 2,
-                            }
-                        }
-                    },
                     scales: {
                         xAxes: [{
                             ticks: {
@@ -76,29 +60,12 @@ export default {
                             },
                             gridLines: {
                                 padding: 48,
-                                // display: false,
                                 drawBorder: false,
                             }
                         }]
                     },
-                    
                     legend: {
                         display:false,
-                        align: 'end',
-                        labels: {
-                            boxWidth: 7,
-                            boxHeight: 7,
-                            usePointStyle: true,
-                            fontSize: 12, //13 achei que ficou melhor, mais parecido
-                            fontColor: '#5E5E6E',
-                            fontFamily: 'Poppins',
-                            fontStyle: 'normal'
-                        }
-                    },
-                    elements: {
-                        point: {
-                            // pointStyle: 'rounded'
-                        }
                     }
                 }
             }

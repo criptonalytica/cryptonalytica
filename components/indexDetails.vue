@@ -6,7 +6,7 @@
         <div id="detais" class="flex between" v-for="item in data" :key="item">
             <p> {{ item.title }} </p>
             <span v-if="item.value">{{item.value}} pts</span>
-            <span v-else>{{item.start}}% <span class="sep">/</span>  {{ item.end }}%</span>
+            <span v-else>{{item.start}}% <span class="sep">/</span> <span v-if="item.end>0">+</span> <span>{{item.end }}%</span></span>
         </div>
     </div>
 </template>
