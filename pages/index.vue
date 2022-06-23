@@ -9,7 +9,7 @@
                 <n-button size="small" hierarchy="secondary" icon="question-circle">What is this?</n-button>
             </div>
 
-            <section class="flex gap-spacing-xs stretch">
+            <section class="index-content flex gap-spacing-xs stretch">
                 <section class="flex column gap-spacing-2-xs flex-1">
                     <section id="new-coins-launch" class="box h32 v24 w100 flex-1">
                         <coinsLaunchChart :data="newCoinLaunchData"/>
@@ -56,7 +56,7 @@
         <section id="list-new-coins" class="section-content">
             <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">List of new coins</n-text>
-                <span>Abas vão aqui</span>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
             </div>
 
             <div class="box h32">
@@ -72,11 +72,11 @@
                 </div>
                 <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
             </div>
-            <category class="top-spacing-m" :indexCoinList="indexCoinList"/>
+            <category-box class="top-spacing-m" :indexCoinList="indexCoinList"/>
         </section>
 
         <section>
-            <categoryCompare :data="compareCoins"/>
+            <categoryCompare/>
         </section>
 
         <!-- <section id="list-new-coins" class="section-content"> -->
@@ -125,13 +125,13 @@
 </template>
 
 <script>
-import PortfolioComposition from '~/components/portfolioComposition.vue';
-import nButton from '../assets/ds/nButton.vue';
+// import PortfolioComposition from '~/components/portfolioComposition.vue';
+// import nButton from '../assets/ds/nButton.vue';
 // Não precisa, o nuxt importa automatico
 // import Header from '../components/Header.vue'
 
 export default {
-  components: { nButton, PortfolioComposition },
+//   components: { nButton, PortfolioComposition },
     data() {
         return {
 
@@ -152,37 +152,6 @@ export default {
                     fill: false,
                     data: [40, 45, 65, 54, 32, 20, 50, 43, 72, 31, 86],
                 }
-            ],
-
-            compareCoins: [
-                    {
-                        label:'Gaming',
-                        data: [40,10,20,50,63,80,23,56,76,80,42],
-                        backgroundColor:'#5CC38A',
-                        borderColor:'#5CC38A',
-                        variation: -4.23,
-                    },
-                    {
-                        label:'DeFi',
-                        data: [40,40,10,5,3,8,23,56,61,90,42],
-                        backgroundColor:'#F473B9',
-                        borderColor:'#F473B9',
-                        variation: -1.23,
-                    },
-                    {
-                        label:'Mobile',
-                        data: [60,11,24,56,62,12,26,52,96,80,31],
-                        backgroundColor:'#E55758',
-                        borderColor:'#E55758',
-                        variation: 4.23,
-                    },
-                    {
-                        label:'Payment',
-                        data: [80,23,56,76,80,42,40,10,20,50,63],
-                        backgroundColor:'#1F9EFF',
-                        borderColor:'#1F9EFF',
-                        variation: 2.23,
-                    },
             ],
         
             /*categories: [

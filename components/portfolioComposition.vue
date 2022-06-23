@@ -1,15 +1,12 @@
 <template>
 <section>
     <div class="section-title flex between middle">
-        <div class="text flex">
-            <p id="categoryTitle">VCs Portfolio composition</p>
-            <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
-        </div>
+        <n-text type="h4" weight="bold">VCs Portfolio composition</n-text>
         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
     </div>
 
     <section class="flex gap-spacing-xs">
-        <div class="portfolio-item box v16 h24" v-for="item in portfolioList" :key="item" >
+        <div class="portfolio-item box v16 h24" v-for="item in portfolioList">
             <div class="header flex middle between">
                 <div class="text">
                     <n-text type="s12">Portfolio name</n-text>
@@ -29,7 +26,7 @@
                         <n-text weight="bold">{{chartItem.value}}%</n-text>
                         <n-text>{{chartItem.name}}</n-text>
                     </div>
-                    <div class="bar"></div>
+                    <div class="bar" :style="{background:$categoryColor[$utils.stringfy( chartItem.name )]}"></div>
                 </div>  
             </div>
         </div>

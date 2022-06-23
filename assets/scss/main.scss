@@ -13,6 +13,9 @@ body {
     max-width: 1180px; 
     margin: auto; 
     padding: 0 24px;
+    @media screen and (max-width: 1080px) {
+        padding: 0 16px;
+    }
 }
 
 .pointer {
@@ -27,7 +30,12 @@ body {
     width: 100%;
     // padding: var(--spacing-m);
 
-    &.h32, .h32 {padding-left: var(--spacing-l); padding-right: var(--spacing-l);}
+    &.h32, .h32 {
+        padding-left: var(--spacing-l); padding-right: var(--spacing-l);
+        @media screen and (max-width: 1080px) {
+            padding-left: var(--spacing-m); padding-right: var(--spacing-m);
+        }
+    }
     &.h24, .h24 {padding-left: var(--spacing-m); padding-right: var(--spacing-m);}
     &.v24, .v24 {padding-top: var(--spacing-m); padding-bottom: var(--spacing-m);}
     &.v16, .v16 {padding-top: var(--spacing-xs); padding-bottom: var(--spacing-xs);}
@@ -46,7 +54,7 @@ body {
 }
 
 .section-content {
-    + .section-content {margin-top: var(--spacing-5-xl);}
+    + .section-content {padding-top: var(--spacing-5-xl);}
     .section-title {
         margin-bottom: var(--spacing-m);
         color: var(--color-black);
@@ -107,18 +115,34 @@ article {
     }
 }
 
-#categoryTitle {
-    font-weight: var(--text-weight-bold);
-    font-size: var(--text-h4-font-size);
-    color: var(--color-black); 
-}
 
 #index-info {
     max-width: 352px;
+    min-width: 312px;
+    width: 35%;
 }
 
 #new-coins-launch {
     .box-title {
         margin-bottom: var(--spacing-xl);
+    }
+}
+
+// Responsivo
+@media screen and (max-width: 1080px) {
+    .index-content {
+        display: block;
+    }
+    #index-info {
+        width: 100%; max-width: 100%;
+        flex-direction: row; align-items: stretch;
+        margin-top: var(--spacing-s);
+        #index-about {
+            flex: auto;
+        }
+        @media screen and (max-width: 680px) {
+            display: block;
+            #index-about {margin-top: var(--spacing-s);}
+        }
     }
 }

@@ -14,5 +14,14 @@ export default {
     this.renderChart(this.chartData, this.chartOptions)
     this.$emit('sendLegend', this.generateLegend())
   },
+  watch: {
+    chartData: function() {
+        console.log('mudou??')
+        this.renderChart(this.chartData, this.options);
+    },
+    redraw: function() {
+        console.log('mudou??')
+    },
+  }
 }
 </script>

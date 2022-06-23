@@ -1,6 +1,6 @@
 <template>
-<section class="flex w100 gap-spacing-2-xs">
-    <div v-for="item in data" :key="item" class="flex middle flex-1 box h24 v24">
+<section class="flex wrap w100 gap-spacing-2-xs">
+    <div v-for="item in data" :key="item.value" class="flex middle flex-1 box h24 v24">
         <div class="icon flex middle center" :class="{'up' : item.value>0}">
             <img v-if="item.value>0" src="~/assets/img/icons/up.svg"></img>
             <img v-else src="~/assets/img/icons/down.svg"></img>
@@ -57,6 +57,14 @@ props: {
                 color: var(--color-green);
                 &:before {content: '+';}
             }
+        }
+    }
+
+    @media screen and (max-width: 1180px) {
+        .box {
+            padding: var(--spacing-xs);
+            min-width: 150px;
+            .icon {height: 32px; width: 32px;}
         }
     }
 </style>

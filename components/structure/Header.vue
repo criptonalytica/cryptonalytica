@@ -10,7 +10,7 @@
                     <li class="current"><NuxtLink to="#">Overview</NuxtLink></li>
                     <li><NuxtLink to="#">Index list</NuxtLink></li>
                     <li><NuxtLink to="#">New coins</NuxtLink></li>
-                    <li><NuxtLink to="#">Categories</NuxtLink></li>
+                    <li><NuxtLink :to="{path: '/', hash: '#performance-by-category'}">Categories</NuxtLink></li>
                     <li><NuxtLink to="#">Portfólio</NuxtLink></li>
                     <li><NuxtLink to="#">Alerts</NuxtLink></li>
                 </ul>

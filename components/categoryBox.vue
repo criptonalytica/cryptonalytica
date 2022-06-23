@@ -1,12 +1,10 @@
 <template>
 <section class="flex gap-spacing-xs category-grid">
-    <div class="category-item" v-for="item in indexCoinList" :key="item" >
+    <div class="category-item" v-for="item in indexCoinList" :key="item.name" >
         <div class="category-name" >
-            <span v-if="item.category ==='Gaming'" style="color: var(--color-green)">{{item.category}}</span>
-            <span v-if="item.category ==='DeFi'" style="color: var(--color-pink)">{{item.category}}</span>
-            <span v-if="item.category ==='Mobile'" style="color: var(--color-red)">{{item.category}}</span>
-            <span v-if="item.category ==='Payment'" style="color: var(--color-primary)">{{item.category}}</span>
-            <span v-if="item.category ==='Web3'" style="color: var(--color-orange)">{{item.category}}</span>
+            <span :style="{color:$categoryColor[$utils.stringfy(item.category)]}">
+                {{item.category}}
+            </span>
         </div>
         <div>
             <div class="flex top-spacing-xs middle gap-spacing-3-xs">

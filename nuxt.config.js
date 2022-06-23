@@ -25,12 +25,16 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/categoryColor.js',
+    '~/plugins/utils.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
-    '~/components',
-    '~/components/ds',
+    { 
+      path: '~/components', 
+      pathPrefix: false,
+    }
   ],
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules

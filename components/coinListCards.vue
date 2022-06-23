@@ -1,11 +1,14 @@
 <template>
     <section class="coin-container gap-spacing-s">
-        <div class="coin-item" v-for="(coin,index) in data" v-if="index<max" :key="coin">
+        <div class="coin-item" v-for="(coin,index) in data" v-if="index<max" :key="coin.name">
             <div class="head flex between">
                 <div class="coin flex middle">
                     <div class="icon"><img :src="coin.icon"></div>
                     <div class="name">
-                        <span :class="['category', stringfy(coin.category)]">{{coin.category}}</span>
+                        <span class="category" 
+                        :style="{color:$categoryColor[$utils.stringfy(coin.category)]}">
+                            {{coin.category}}
+                        </span>
                         <n-text type="h6">{{coin.name}}</n-text>
                     </div>
                 </div>
@@ -66,17 +69,9 @@ export default {
     },
     data() {
         return {
-            x: 'y'
         }
     },
     methods:{
-        stringfy(str = '') {
-            const strArr = str.split(' ');
-            const snakeArr = strArr.reduce((acc, val) => {
-                return acc.concat(val.toLowerCase());
-            }, []);
-            return snakeArr.join('-');
-        },
         percentVariation(value) {
             if(typeof value === 'string') {
                 if(value.startsWith('-')) return 'variation down';
@@ -131,9 +126,6 @@ export default {
 
         .category {
             color:var(--color-primary);
-            &.defi {color: var(--color-pink);}
-            &.gaming {color: var(--color-blue);}
-            &.mobile {color: var(--color-red);}
         }
 
 

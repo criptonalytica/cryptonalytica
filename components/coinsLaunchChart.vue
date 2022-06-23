@@ -104,6 +104,13 @@ export default {
 
     #chart-container {
         position: relative;
+
+        > div {
+            position: relative;
+            z-index: 5;
+        }
+
+
         &:before {
             content: '';
             position: absolute;
