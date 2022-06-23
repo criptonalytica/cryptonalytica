@@ -2,7 +2,7 @@
 <section>
     <div class="section-title flex between middle">
         <n-text type="h4" weight="bold">VCs Portfolio composition</n-text>
-        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/portfolio">See all</NuxtLink> </n-button>
     </div>
 
     <section class="flex gap-spacing-xs">

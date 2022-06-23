@@ -44,19 +44,18 @@
                             <n-text type="h6">Index coin list</n-text>
                             <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
                         </div>
-                        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+                        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/indexCoinList">See all</NuxtLink> </n-button>
                     </div>
 
-                    <coin-list-cards :data="indexCoinList" :max="4">
+                    <coinListCards :data="indexCoinList" :max="4"/>
 
-                    </coin-list-cards>
             </section>
         </section>
 
         <section id="list-new-coins" class="section-content">
             <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">List of new coins</n-text>
-                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/newCoinsList">See all</NuxtLink> </n-button>
             </div>
 
             <div class="box h32">
@@ -66,11 +65,11 @@
 
         <section id="performance-by-category" class="section-content">
             <div class="section-title flex between middle">
-                <div class="text flex">
-                    <p id="categoryTitle">Performance by categories</p>
+                <div class="text flex middle">
+                    <n-text type="h4" weight="bold">Performance by categories</n-text>
                     <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
                 </div>
-                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/categoriesPerformance">See all</NuxtLink> </n-button>
             </div>
             <category-box class="top-spacing-m" :indexCoinList="indexCoinList"/>
         </section>
@@ -119,8 +118,6 @@
         </section>
       </main>
     <Footer />
-
-      <!-- <br><br><br><br> -->
     </section>
 </template>
 
@@ -154,19 +151,6 @@ export default {
                 }
             ],
         
-            /*categories: [
-                gaming: {
-                    data: [1,2,23,123,1,2]
-                    labem:  'gaming',
-                    color: '#000'
-                }
-                mobile: {
-                    data: [1,2,23,123,1,2]
-                    labem:  'gaming',
-                    color: '#000'
-                }
-            ],*/
-
             indexDetails: [
                 { title: "Index value", value: "1.200" },
                 { title: "1 year variation", start: "-2.00", end: "4.00" },

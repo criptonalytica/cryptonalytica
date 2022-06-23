@@ -39,7 +39,7 @@ export default {
             type: Object,
         },
         maxrows: {
-            type: String
+            type: Number
         }
     },
     data() {
