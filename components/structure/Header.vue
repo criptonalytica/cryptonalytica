@@ -7,12 +7,12 @@
 
             <nav>
                 <ul>
-                    <li class="current"><NuxtLink to="#">Overview</NuxtLink></li>
-                    <li><NuxtLink to="#">Index list</NuxtLink></li>
-                    <li><NuxtLink to="#">New coins</NuxtLink></li>
+                    <li class="current"><NuxtLink to="/">Overview</NuxtLink></li>
+                    <li><NuxtLink :to="{path:'/', hash:'#index-coin-list'}">Index list</NuxtLink></li>
+                    <li><NuxtLink :to="{path: '/', hash:'#list-new-coins'}">New coins</NuxtLink></li>
                     <li><NuxtLink :to="{path: '/', hash: '#performance-by-category'}">Categories</NuxtLink></li>
-                    <li><NuxtLink to="#">Portfólio</NuxtLink></li>
-                    <li><NuxtLink to="#">Alerts</NuxtLink></li>
+                    <li><NuxtLink :to="{path:'/', hash:'#vcs-portfolio'}">Portfólio</NuxtLink></li>
+                    <li><NuxtLink :to="{path:'/', hash:'#social-numbers'}">Alerts</NuxtLink></li>
                 </ul>
             </nav>
 
@@ -23,17 +23,6 @@
         </section>
     </header>
 </template>
-
-<script>
-// import nButton from '../components/ds/nButton.vue'
-
-// export default {
-//     components: {
-//         nButton,
-//     },
-    
-// }
-</script>
 
 <style lang="scss" scoped>
     header {

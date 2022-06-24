@@ -1,7 +1,7 @@
 <template>
   <section>
     <Header/>
-        <section id="performance-by-category" class="section-content container">
+        <section id="performance-by-category" class="section-content container ">
             <div class="section-title flex between middle">
                 <div class="text flex middle">
                     <n-text type="h4" weight="bold">Performance by categories</n-text>

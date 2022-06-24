@@ -38,7 +38,7 @@
                 </section>
             </section>
             
-            <section class="top-spacing-xs box h32 v24">
+            <section id="index-coin-list" class="top-spacing-xs box h32 v24">
                     <div class="box-title flex middle between">
                         <div class="flex middle">
                             <n-text type="h6">Index coin list</n-text>

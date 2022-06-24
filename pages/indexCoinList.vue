@@ -2,13 +2,13 @@
 <section>
     <Header/>
         <section class="box h32 v24">
-                        <div class="box-title flex middle between">
-                            <div class="flex middle">
-                                <n-text type="h6">Index coin list</n-text>
-                                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
-                            </div>
-                        </div>
-                        <coinListCards :data="indexCoinList" :max="this.indexCoinList.length"/>
+            <div class="box-title flex middle between">
+                <div class="flex middle">
+                    <n-text type="h6">Index coin list</n-text>
+                    <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
+                </div>
+            </div>
+            <coinListCards :data="indexCoinList" :max="this.indexCoinList.length"/>
         </section>
     <Footer/>
 </section>

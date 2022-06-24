@@ -6,11 +6,11 @@
     </div>
 
     <section class="flex gap-spacing-xs">
-        <div class="portfolio-item box v16 h24" v-for="item in portfolioList">
+        <div class="portfolio-item box v16 h24" v-for="item in portfolioList" :key="item.name">
             <div class="header flex middle between">
                 <div class="text">
                     <n-text type="s12">Portfolio name</n-text>
-                    <n-text type="h6" weight="medium">{{item.name}}</n-text>
+                    <n-text type="h6" weight="bold">{{item.name}}</n-text>
                 </div>
                 <div class="number">
                     <n-text type="s12">Last day</n-text>
@@ -20,7 +20,7 @@
 
             <div class="chart flex gap-spacing-4-xs">
                 <div class="chart-item flex column gap-spacing-3-xs" 
-                    v-for="chartItem in item.chart" 
+                    v-for="chartItem in item.chart" :key="chartItem.name"
                     :style="{'width': chartItem.value + '%'}">
                     <div class="legend">
                         <n-text weight="bold">{{chartItem.value}}%</n-text>
