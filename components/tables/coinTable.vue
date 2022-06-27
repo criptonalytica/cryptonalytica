@@ -10,7 +10,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="(row, index) in sortedData" v-if="index<maxrows">
+                <tr v-for="(row, index) in sortedData" v-if="index<max">
                     <!-- Object.keys(data.thead).length talvez usar -->
                     <td v-for="(value, key) in row" v-if="key!='supports'" :class="key">
                         <!-- Se for o nome da cripto -->
@@ -38,7 +38,7 @@ export default {
         data: {
             type: Object,
         },
-        maxrows: {
+        max: {
             type: Number
         }
     },

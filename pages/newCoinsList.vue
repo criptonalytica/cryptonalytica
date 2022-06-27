@@ -6,7 +6,7 @@
                     <n-text type="h4" weight="bold">List of new coins</n-text>
                 </div>
                 <div class="box h32">
-                    <coin-table :data="tableData" :maxrows="3"/>   <!-- this.tableData.length -->
+                    <coin-table :data="tableData" :max="tableData.tbody.length"/>   <!-- this.tableData.length -->
                 </div>
             </section>
         <Footer/>

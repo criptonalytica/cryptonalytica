@@ -59,7 +59,7 @@
             </div>
 
             <div class="box h32">
-                <coin-table :data="tableData" maxrows="10"/>
+                <coin-table :data="tableData" :max="10" />
             </div>
         </section>
 
