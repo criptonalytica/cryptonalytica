@@ -78,19 +78,12 @@
             <categoryCompare/>
         </section>
 
-        <!-- <section id="list-new-coins" class="section-content"> -->
         <section id="vcs-portfolio" class="section-content top-spacing-4-xl">
-            
-            <portfolio-composition></portfolio-composition>
-
-            <!-- <div class="section-title flex between middle">
-                <div class="text flex">
-                    <p id="categoryTitle">VCs Portfolio composition</p>
-                    <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
-                </div>
-                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+            <div class="section-title flex between middle">
+                <n-text type="h4" weight="bold">VCs Portfolio composition</n-text>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/portfolio">See all</NuxtLink> </n-button>
             </div>
-            <category class="top-spacing-m" :indexCoinList="indexCoinList"/> -->
+            <portfolio-composition/>
         </section>
 
         <section id="social-numbers" class="section-content">
@@ -122,13 +115,7 @@
 </template>
 
 <script>
-// import PortfolioComposition from '~/components/portfolioComposition.vue';
-// import nButton from '../assets/ds/nButton.vue';
-// Não precisa, o nuxt importa automatico
-// import Header from '../components/Header.vue'
-
 export default {
-//   components: { nButton, PortfolioComposition },
     data() {
         return {
 
@@ -398,6 +385,5 @@ export default {
 
         };
     },
-    // components: { SocialTable }
 }
 </script>

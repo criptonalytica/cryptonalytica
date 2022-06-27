@@ -1,10 +1,5 @@
 <template>
 <section>
-    <div class="section-title flex between middle">
-        <n-text type="h4" weight="bold">VCs Portfolio composition</n-text>
-        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/portfolio">See all</NuxtLink> </n-button>
-    </div>
-
     <section class="flex gap-spacing-xs">
         <div class="portfolio-item box v16 h24" v-for="item in portfolioList" :key="item.name">
             <div class="header flex middle between">
