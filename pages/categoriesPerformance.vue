@@ -8,7 +8,7 @@
                     <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
                 </div>
             </div>
-            <category-box :indexCoinList="indexCoinList"/>
+            <category-box :indexCoinList="indexCoinList" :max="this.indexCoinList.length"/>
         </section>
     <Footer/>
   </section>
@@ -19,6 +19,36 @@ export default {
     data() {
         return {
              indexCoinList: [
+                {
+                    ranking: "01",
+                    name: "Woo network",
+                    price: 118.49,
+                    oneDay: +2.32,
+                    sevenDays: -4.12,
+                    start: "Mar, 2022",
+                    market: 28,
+                    volume: "16",
+                    circ: "54M",
+                    weight: "11%",
+                    icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png",
+                    ticker: "WOO",
+                    category: "DeFi",
+                },
+                {
+                    ranking: "01",
+                    name: "Woo network",
+                    price: 118.49,
+                    oneDay: +2.32,
+                    sevenDays: -4.12,
+                    start: "Mar, 2022",
+                    market: 28,
+                    volume: "16",
+                    circ: "54M",
+                    weight: "11%",
+                    icon: "https://s2.coinmarketcap.com/static/img/coins/200x200/7501.png",
+                    ticker: "WOO",
+                    category: "DeFi",
+                },
                 {
                     ranking: "01",
                     name: "Woo network",

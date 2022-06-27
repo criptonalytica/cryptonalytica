@@ -1,6 +1,6 @@
 <template>
 <section class="flex gap-spacing-xs category-grid">
-    <div class="category-item" v-for="item in indexCoinList" :key="item.name" >
+    <div class="category-item" v-for="(item,index) in indexCoinList" :key="item.name" v-if="index<max" >
         <div class="category-name" >
             <span :style="{color:$categoryColor[$utils.stringfy(item.category)]}">
                 {{item.category}}
@@ -29,7 +29,8 @@
 <script>
 export default {
 props: {
-    indexCoinList: Array
+    indexCoinList: Array,
+    max: Number
 },
 
 }

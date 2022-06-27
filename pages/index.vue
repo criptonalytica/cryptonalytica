@@ -71,7 +71,7 @@
                 </div>
                 <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/categoriesPerformance">See all</NuxtLink> </n-button>
             </div>
-            <category-box class="top-spacing-m" :indexCoinList="indexCoinList"/>
+            <category-box class="top-spacing-m" :indexCoinList="indexCoinList" :max="5"/>
         </section>
 
         <section>
@@ -104,14 +104,14 @@
                         <img class="icon" src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter Icon">
                         <n-text type="h6">Twitter followers</n-text>
                     </div>
-                    <coin-table :data="socialTwitter" maxrows="10"/>
+                    <coin-table :data="socialTwitter" :max="10"/>
                 </div>
                 <div class="box v24 h32">
                     <div class="box-title flex middle ">
                         <img class="icon" src="https://cdn3.iconfinder.com/data/icons/inficons/512/github.png" alt="Github Icon">
                         <n-text type="h6">Github commits</n-text>
                     </div>
-                    <coin-table :data="socialGithub" maxrows="10"/>
+                    <coin-table :data="socialGithub" :max="10"/>
                 </div>
                 
             </section>
