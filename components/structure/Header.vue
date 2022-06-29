@@ -2,7 +2,9 @@
     <header>
         <section class="container flex between middle">
             <div id="logo">
-                <img src="~/assets/img/logo-black.svg" width="188" alt="CryptoNalytica">
+                <NuxtLink to="/">
+                    <img src="~/assets/img/logo-black.svg" width="188" alt="CryptoNalytica">
+                </NuxtLink>
             </div>
 
             <!-- <button id="responsive-trigger">

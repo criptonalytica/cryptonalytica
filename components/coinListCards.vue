@@ -25,7 +25,9 @@
                     </div>
                     <div class="seven-days">
                         <span class="label">7 Days</span>
-                        {{coin.sevenDays}}
+                        <span :class="percentVariation(coin.sevenDays)">
+                            {{coin.sevenDays}}
+                        </span>
                     </div>
                 </div>
             </div>
@@ -73,9 +75,9 @@ export default {
     },
     methods:{
         percentVariation(value) {
-            if(typeof value === 'string') {
-                if(value.startsWith('-')) return 'variation down';
-                if(value.startsWith('+')) return 'variation up';
+            if(typeof value === 'number') {
+                if(value<0) return 'variation down';
+                else return 'variation up';
             }
         }
     },
@@ -118,6 +120,15 @@ export default {
                 font-weight: var(--text-weight-medium);
                 font-size: var(--text-s14-font-size);
                 // min-width: 220px;
+
+                .variation {
+                    font-weight: var(--text-weight-medium);
+                    &.up {
+                        color: var(--color-green);
+                        &:before {content: '+';}
+                    }
+                    &.down {color: var(--color-red)}
+                }
             }
 
             .label {font-size: var(--text-s12-font-size);}

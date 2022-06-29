@@ -1,10 +1,5 @@
 <template>
 <section>
-    <div class="section-title flex between middle">
-        <n-text type="h4" weight="bold">VCs Portfolio composition</n-text>
-        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
-    </div>
-
     <section class="flex wrap gap-spacing-xs">
         <div class="portfolio-item flex-1 box v16 h24" v-for="item in portfolioList">
             <div class="header flex gap-spacing-4-xs middle between">
@@ -105,7 +100,7 @@ section {
         }
 
         .variation {
-            font-weight: var(--text-weight-bold);
+            font-weight: var(--text-weight-medium);
 
             &.up {
                 color: var(--color-green);

@@ -88,8 +88,13 @@ export default {
 
 <style lang="scss" scoped>
     .coinTable {
-        padding-bottom: var(--spacing-2-xs);
+        // Corrige bug que surge com o scroll
+        width: calc(100% + 12px);
+        padding: 0 6px;
+        margin-left: -6px;
+
         overflow-x: auto;
+        padding-bottom: var(--spacing-2-xs);
     }
 
     table {
@@ -97,7 +102,6 @@ export default {
         width: 100%;
         font-size: var(--text-s14-font-size);
         color: var(--color-grey-5);
-
         white-space: nowrap;
         
         thead {
@@ -138,6 +142,8 @@ export default {
 
         td, th {
             padding: var(--spacing-xs) var(--spacing-3-xs);
+
+            // width: 20%;
 
             &:nth-child(2) {
                 position: sticky;

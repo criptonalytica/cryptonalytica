@@ -1,6 +1,6 @@
 <template>
-<section class="flex wrap stretch gap-spacing-xs category-grid">
-    <div class="category-item" v-for="item in indexCoinList" :key="item.name" v-if="index<max">
+<section class="flex wrap stretch gap-spacing-xs category-grid" :class="'col'+cols">
+    <div class="category-item" v-for="(item, index) in indexCoinList" :key="item.name" v-if="checkMax(index)">
         <div class="category-name" >
             <span :style="{color:$categoryColor[$utils.stringfy(item.category)]}">
                 {{item.category}}
@@ -28,10 +28,23 @@
 
 <script>
 export default {
-props: {
-    indexCoinList: Array,
-    max: Number
-},
+    props: {
+        indexCoinList: Array,
+        cols: {
+            type: Number,
+            default: '4'
+        },
+        max: {
+            type: Number,
+            default: false,
+        }
+    },
+    methods: {
+        checkMax(index) {
+            if(!this.max) return true
+            if(index<this.max) return true
+        }
+    }
 
 }
 </script>
@@ -45,16 +58,25 @@ section {
     border-top: 1px solid var(--color-grey-1);
 }
 
+.category-grid.col4 {
+    .category-item {width: calc(25% - 12px);}
+}
+
+.category-grid.col5 {
+    .category-item {width: calc(20% - 12.8px);}
+}
+
 .category-item {
     border: 1px solid var(--color-grey-1);
     border-radius: var(--spacing-4-xs);
     background-color: var(--color-white);       
     padding: 16px 24px 20px; 
-    // min-width: 200px;
-    // white-space: nowrap;
     min-width: 180px;
-    flex-grow: 1;
-    flex: 1;
+    
+    @media screen and (max-width: 1080px) {
+        flex: 1;
+        flex-grow: 1;
+    }
 
     .category-name {
         font-weight: var(--text-weight-medium);
@@ -72,6 +94,7 @@ section {
     }
 
 }
+
 .icon {
     width:28px;
     height:28px;

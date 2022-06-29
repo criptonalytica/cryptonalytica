@@ -44,7 +44,7 @@
                             <n-text type="h6">Index coin list</n-text>
                             <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
                         </div>
-                        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/indexCoinList">See all</NuxtLink> </n-button>
+                        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="indexCoinList">See all</NuxtLink> </n-button>
                     </div>
 
                     <coin-list-cards :data="indexCoinList" :max="4"/>
@@ -70,7 +70,7 @@
                 </div>
                 <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/categoriesPerformance">See all</NuxtLink> </n-button>
             </div>
-            <category-box class="top-spacing-m" :indexCoinList="indexCoinList" :max="5"/>
+            <category-box class="top-spacing-m" :indexCoinList="indexCoinList" :max="5" :cols="5"/>
         </section>
 
         <section>
@@ -157,7 +157,7 @@ export default {
                     ranking: "01",
                     name: "Woo network",
                     price: 118.49,
-                    oneDay: +2.32,
+                    oneDay: 2.32,
                     sevenDays: -4.12,
                     start: "Mar, 2022",
                     marketcap: "28M",
@@ -172,7 +172,7 @@ export default {
                     ranking: "02",
                     name: "Anchor Crypto",
                     price: 203.49,
-                    oneDay: +2.32,
+                    oneDay: 2.32,
                     sevenDays: -4.12,
                     start: "Feb, 2022",
                     marketcap: "28M",
@@ -217,7 +217,7 @@ export default {
                     ranking: "05",
                     name: "Solano Network",
                     price: 280.918,
-                    oneDay: +2.32,
+                    oneDay: 2.32,
                     sevenDays: -2.92,
                     start: "Mar, 2022",
                     marketcap: "28M",
