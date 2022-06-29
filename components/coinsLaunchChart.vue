@@ -52,7 +52,6 @@ export default {
                         },
                     }],
                     yAxes: [{
-                        // grace: '10%',
                         ticks: {
                             beginAtZero: true,
                             callback: function(value) {
@@ -76,10 +75,6 @@ export default {
     mounted () {
     },
     methods: {
-        // removeDataset(index) {
-        //     this.chartData.datasets = this.chartData.datasets.slice(1)
-        //     console.log(this.$refs.bar)
-        // },
         setLegend(value) {
             this.chartLegend = value
         },

@@ -9,7 +9,7 @@
                 <img :src="require(`~/assets/img/icons/menu.svg`)" width="32"></img>
             </button> -->
 
-            <n-button @click="menuOpen=!menuOpen" id="responsive-trigger" size="medium" hierarchy="secondary" icon="menu"></n-button>
+            <n-button @click="menuOpen=!menuOpen" id="responsive-trigger" class="hide" size="medium" hierarchy="secondary" icon="menu"></n-button>
 
             <nav :class="{open:menuOpen}">
                 <n-button @click="menuOpen=!menuOpen" class="hide" id="responsive-close" size="medium" hierarchy="secondary" icon="close"></n-button>
@@ -19,12 +19,12 @@
                 </div>
 
                 <ul>
-                    <li class="current"><NuxtLink to="#">Overview</NuxtLink></li>
-                    <li><NuxtLink to="#">Index list</NuxtLink></li>
-                    <li><NuxtLink to="#">New coins</NuxtLink></li>
+                    <li class="current"><NuxtLink to="/">Overview</NuxtLink></li>
+                    <li><NuxtLink :to="{path:'/', hash:'#index-coin-list'}">Index list</NuxtLink></li>
+                    <li><NuxtLink :to="{path: '/', hash:'#list-new-coins'}">New coins</NuxtLink></li>
                     <li><NuxtLink :to="{path: '/', hash: '#performance-by-category'}">Categories</NuxtLink></li>
-                    <li><NuxtLink to="#">Portfólio</NuxtLink></li>
-                    <li><NuxtLink to="#">Alerts</NuxtLink></li>
+                    <li><NuxtLink :to="{path:'/', hash:'#vcs-portfolio'}">Portfólio</NuxtLink></li>
+                    <li><NuxtLink :to="{path:'/', hash:'#social-numbers'}">Alerts</NuxtLink></li>
                 </ul>
 
                 <div class="n-buttons flex middle gap-spacing-2-xs">
@@ -42,7 +42,6 @@
 </template>
 
 <script>
-// import nButton from '../components/ds/nButton.vue'
 
 export default {
     data() {
@@ -52,7 +51,6 @@ export default {
     }
 }
     
-// }
 </script>
 
 <style lang="scss" scoped>

@@ -17,7 +17,7 @@
                     
                     <number-highlight id="new-coins-numbers" :data="indexHighlights"></number-highlight>
                 </section>
-                
+
                 <section id="index-info" class="flex column gap-spacing-2-xs">
 
                     <index-details :data="indexDetails"></index-details>
@@ -38,13 +38,13 @@
                 </section>
             </section>
             
-            <section class="top-spacing-xs box h32 v24">
+            <section id="index-coin-list" class="top-spacing-xs box h32 v24">
                     <div class="box-title flex middle between">
                         <div class="flex middle">
                             <n-text type="h6">Index coin list</n-text>
                             <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
                         </div>
-                        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+                        <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/indexCoinList">See all</NuxtLink> </n-button>
                     </div>
 
                     <coin-list-cards :data="indexCoinList" :max="4"/>
@@ -54,42 +54,35 @@
         <section id="list-new-coins" class="section-content">
             <div class="section-title flex between middle">
                 <n-text type="h4" weight="bold">List of new coins</n-text>
-                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/newCoinsList">See all</NuxtLink> </n-button>
             </div>
 
             <div class="box h32">
-                <coin-table :data="tableData" maxrows="10"/>
+                <coin-table :data="tableData" :max="10" />
             </div>
         </section>
 
         <section id="performance-by-category" class="section-content">
             <div class="section-title flex between middle">
-                <div class="text flex">
-                    <p id="categoryTitle">Performance by categories</p>
+                <div class="text flex middle">
+                    <n-text type="h4" weight="bold">Performance by categories</n-text>
                     <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
                 </div>
-                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/categoriesPerformance">See all</NuxtLink> </n-button>
             </div>
-            <category-box class="top-spacing-m" :indexCoinList="indexCoinList"/>
+            <category-box class="top-spacing-m" :indexCoinList="indexCoinList" :max="5"/>
         </section>
 
         <section>
             <categoryCompare/>
         </section>
 
-        <!-- <section id="list-new-coins" class="section-content"> -->
         <section id="vcs-portfolio" class="section-content top-spacing-4-xl">
-            
-            <portfolio-composition></portfolio-composition>
-
-            <!-- <div class="section-title flex between middle">
-                <div class="text flex">
-                    <p id="categoryTitle">VCs Portfolio composition</p>
-                    <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
-                </div>
-                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
+            <div class="section-title flex between middle">
+                <n-text type="h4" weight="bold">VCs Portfolio composition</n-text>
+                <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right"> <NuxtLink to="/portfolio">See all</NuxtLink> </n-button>
             </div>
-            <category class="top-spacing-m" :indexCoinList="indexCoinList"/> -->
+            <portfolio-composition/>
         </section>
 
         <section id="social-numbers" class="section-content">
@@ -103,33 +96,25 @@
                         <img class="icon" src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter Icon">
                         <n-text type="h6">Twitter followers</n-text>
                     </div>
-                    <coin-table :data="socialTwitter" maxrows="10"/>
+                    <coin-table :data="socialTwitter" :max="10"/>
                 </div>
                 <div class="box v24 h32 flex-1">
                     <div class="box-title flex middle ">
                         <img class="icon" src="https://cdn3.iconfinder.com/data/icons/inficons/512/github.png" alt="Github Icon">
                         <n-text type="h6">Github commits</n-text>
                     </div>
-                    <coin-table :data="socialGithub" maxrows="10"/>
+                    <coin-table :data="socialGithub" :max="10"/>
                 </div>
                 
             </section>
         </section>
       </main>
     <Footer />
-
-      <!-- <br><br><br><br> -->
     </section>
 </template>
 
 <script>
-// import PortfolioComposition from '~/components/portfolioComposition.vue';
-// import nButton from '../assets/ds/nButton.vue';
-// Não precisa, o nuxt importa automatico
-// import Header from '../components/Header.vue'
-
 export default {
-//   components: { nButton, PortfolioComposition },
     data() {
         return {
 
@@ -152,19 +137,6 @@ export default {
                 }
             ],
         
-            /*categories: [
-                gaming: {
-                    data: [1,2,23,123,1,2]
-                    labem:  'gaming',
-                    color: '#000'
-                }
-                mobile: {
-                    data: [1,2,23,123,1,2]
-                    labem:  'gaming',
-                    color: '#000'
-                }
-            ],*/
-
             indexDetails: [
                 { title: "Index value", value: "1.200" },
                 { title: "1 year variation", start: "-2.00", end: "4.00" },
@@ -412,6 +384,5 @@ export default {
 
         };
     },
-    // components: { SocialTable }
 }
 </script>
