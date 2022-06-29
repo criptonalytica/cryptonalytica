@@ -5,9 +5,9 @@
         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
     </div>
 
-    <section class="flex gap-spacing-xs">
-        <div class="portfolio-item box v16 h24" v-for="item in portfolioList">
-            <div class="header flex middle between">
+    <section class="flex wrap gap-spacing-xs">
+        <div class="portfolio-item flex-1 box v16 h24" v-for="item in portfolioList">
+            <div class="header flex gap-spacing-4-xs middle between">
                 <div class="text">
                     <n-text type="s12">Portfolio name</n-text>
                     <n-text type="h6" weight="medium">{{item.name}}</n-text>
@@ -99,7 +99,10 @@ section {
             margin-bottom: var(--spacing-4-xs);
         }
 
-        .number {text-align: right;}
+        .number {
+            text-align: right;
+            white-space: nowrap;
+        }
 
         .variation {
             font-weight: var(--text-weight-bold);
@@ -143,6 +146,7 @@ section {
             }
         }
     }
+
 
 }
 </style>

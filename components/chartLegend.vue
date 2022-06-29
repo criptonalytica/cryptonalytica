@@ -29,6 +29,7 @@ export default {
         margin-right: var(--spacing-3-xs);   
     }
 
+    white-space: nowrap;
     font-size: var(--text-s12-font-size);
     color: var(--color-grey-5);
 }

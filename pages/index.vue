@@ -16,8 +16,8 @@
                     </section>
                     
                     <number-highlight id="new-coins-numbers" :data="indexHighlights"></number-highlight>
-
                 </section>
+                
                 <section id="index-info" class="flex column gap-spacing-2-xs">
 
                     <index-details :data="indexDetails"></index-details>
@@ -47,9 +47,7 @@
                         <n-button size="small" hierarchy="secondary" iconPosition="right" icon="arrow-right">See all</n-button>
                     </div>
 
-                    <coin-list-cards :data="indexCoinList" :max="4">
-
-                    </coin-list-cards>
+                    <coin-list-cards :data="indexCoinList" :max="4"/>
             </section>
         </section>
 
@@ -99,15 +97,15 @@
                 <n-text type="h4" weight="bold">Social numbers</n-text>
             </div>
 
-            <section class="flex gap-spacing-xs">
-                <div class="box v24 h32">
+            <section class="flex wrap gap-spacing-xs">
+                <div class="box v24 h32 flex-1">
                     <div class="box-title flex middle ">
                         <img class="icon" src="https://cdn-icons-png.flaticon.com/512/124/124021.png" alt="Twitter Icon">
                         <n-text type="h6">Twitter followers</n-text>
                     </div>
                     <coin-table :data="socialTwitter" maxrows="10"/>
                 </div>
-                <div class="box v24 h32">
+                <div class="box v24 h32 flex-1">
                     <div class="box-title flex middle ">
                         <img class="icon" src="https://cdn3.iconfinder.com/data/icons/inficons/512/github.png" alt="Github Icon">
                         <n-text type="h6">Github commits</n-text>
@@ -190,7 +188,7 @@ export default {
                     oneDay: +2.32,
                     sevenDays: -4.12,
                     start: "Mar, 2022",
-                    market: 28,
+                    marketcap: "28M",
                     volume: "16",
                     circ: "54M",
                     weight: "11%",
@@ -205,7 +203,7 @@ export default {
                     oneDay: +2.32,
                     sevenDays: -4.12,
                     start: "Feb, 2022",
-                    market: 28,
+                    marketcap: "28M",
                     volume: "16",
                     circ: "54M",
                     weight: "11%",
@@ -250,7 +248,7 @@ export default {
                     oneDay: +2.32,
                     sevenDays: -2.92,
                     start: "Mar, 2022",
-                    market: 28,
+                    marketcap: "28M",
                     volume: "16",
                     circ: "54M",
                     weight: "11%",

@@ -83,6 +83,13 @@
 --spacing-5-xl: 80px;
 --spacing-6-xl: 96px;
 
+@media screen and (max-width: 680px) {
+    --spacing-m: var(--spacing-s);
+    --spacing-l: var(--spacing-m);
+    --spacing-xl: var(--spacing-l);
+    --spacing-5-xl: var(--spacing-3-xl);
+}
+
 
 // 
 // Borders

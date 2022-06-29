@@ -89,6 +89,7 @@ export default {
 <style lang="scss" scoped>
     .coinTable {
         padding-bottom: var(--spacing-2-xs);
+        overflow-x: auto;
     }
 
     table {
@@ -96,14 +97,20 @@ export default {
         width: 100%;
         font-size: var(--text-s14-font-size);
         color: var(--color-grey-5);
+
+        white-space: nowrap;
         
         thead {
             text-align: left;
+            border-spacing: 0;
+            border-collapse: collapse;
+            
             th {
                 font-weight: var(--text-weight-regular);
                 font-size: var(--text-s12-font-size);
                 color: var(--color-grey-4);
                 cursor: pointer;
+                position: relative;
 
                 &:after {
                     content: '▾';
@@ -130,8 +137,14 @@ export default {
     
 
         td, th {
-            // &:not(.name) {width: 100px;} 
-            padding-top: 16px; padding-bottom: 16px;
+            padding: var(--spacing-xs) var(--spacing-3-xs);
+
+            &:nth-child(2) {
+                position: sticky;
+                left: 0;
+                z-index: 1;
+                background: white;
+            }
 
             &.coin {
                 width: 280px;
@@ -148,6 +161,11 @@ export default {
                     color: var(--color-grey-3);
                     margin-left: var(--spacing-2-xs);
                 }
+
+                @media screen and (max-width: 680px) {
+                    p {font-size: var(--text-s12-font-size);}
+                    .ticker {font-size: var(--text-s12-font-size);}
+                }
             } 
 
             &:first-child {width: 40px;}
@@ -156,6 +174,7 @@ export default {
 
         tr td {
             border-top: var(--border-grey-1);
+            // padding: 0 var(--spacing-s);
             .variation.up {color: var(--color-green);}
             .variation.down {color: var(--color-red)}
         }

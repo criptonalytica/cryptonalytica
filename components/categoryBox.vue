@@ -1,5 +1,5 @@
 <template>
-<section class="flex gap-spacing-xs category-grid">
+<section class="flex wrap stretch gap-spacing-xs category-grid">
     <div class="category-item" v-for="item in indexCoinList" :key="item.name" >
         <div class="category-name" >
             <span :style="{color:$categoryColor[$utils.stringfy(item.category)]}">
@@ -49,6 +49,11 @@ section {
     border-radius: var(--spacing-4-xs);
     background-color: var(--color-white);       
     padding: 16px 24px 20px; 
+    // min-width: 200px;
+    // white-space: nowrap;
+    min-width: 180px;
+    flex-grow: 1;
+    flex: 1;
 
     .category-name {
         font-weight: var(--text-weight-medium);

@@ -4,7 +4,7 @@
             <n-text type="h6">Compare categories</n-text>
             <n-button size="small" hierarchy="secondary" icon="question-circle">Learn more</n-button>
         </div>
-        <div class="flex stretch">
+        <div class="chart-area flex stretch">
             <div class="categories-sidebar v24">
                 <div v-if="!categorySelected" class="empty flex middle gap-spacing-4-xs">
                     <img src="~/assets/img/icons/mouse-pointer.svg">
@@ -193,9 +193,22 @@ export default {
     .categories-sidebar {
         width: 30%;
         max-width: 320px;
-        min-width: 200px;
+        min-width: 240px;
+        // flex-shrink: 0;
         border-right: 1px solid var(--color-grey-1);
         padding: var(--spacing-m);
+    }
+
+    @media screen and (max-width: 800px) {
+        .chart-area {
+            flex-direction: column-reverse;
+        }
+        .categories-sidebar {
+            width: 100%;
+            max-width: none;
+            border: 0;
+            border-top: 1px solid var(--color-grey-1);
+        }
     }
 
     .empty {

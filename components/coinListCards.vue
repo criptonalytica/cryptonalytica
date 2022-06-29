@@ -1,7 +1,7 @@
 <template>
     <section class="coin-container gap-spacing-s">
         <div class="coin-item" v-for="(coin,index) in data" v-if="index<max" :key="coin.name">
-            <div class="head flex between">
+            <div class="head flex wrap between gap-spacing-s">
                 <div class="coin flex middle">
                     <div class="icon"><img :src="coin.icon"></div>
                     <div class="name">
@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <div class="botton flex between">
+            <div class="bottom-numbers flex gap-spacing-xs between">
                 <div class="start">
                     <span class="label">Start</span>
                     {{coin.start}}
@@ -84,9 +84,13 @@ export default {
 
 <style lang="scss" scoped>
 .coin-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
     padding-bottom: var(--spacing-xs);
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media screen and (min-width: 1080px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     .coin-item {
         padding: 0 var(--spacing-m);
@@ -113,15 +117,33 @@ export default {
             .numbers {
                 font-weight: var(--text-weight-medium);
                 font-size: var(--text-s14-font-size);
+                // min-width: 220px;
             }
 
             .label {font-size: var(--text-s12-font-size);}
         }
 
-        .botton {
+        .bottom-numbers {
             border-top: var(--border-grey-1);
             padding: var(--spacing-xs) 0;
             font-size: var(--text-s12-font-size);
+            white-space: nowrap;
+
+            @media screen and (max-width: 540px) {
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                
+                // min-width: ;
+                // gap: 18px;
+                // min-width: 33%;
+
+                > div {min-width: calc(33.33% - 12px);}
+            }
+
+                // > div {
+                //     min-width: 60px;
+                //     white-space: nowrap;
+                //     }
         }
 
         .category {

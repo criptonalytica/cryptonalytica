@@ -27,7 +27,7 @@ body {
     background: white;
     border: var(--border-grey-1);
     border-radius: var(--border-radius-xs);
-    width: 100%;
+    max-width: 100%;
     // padding: var(--spacing-m);
 
     &.h32, .h32 {
@@ -44,7 +44,7 @@ body {
         margin-bottom: var(--spacing-s);
         .typography {color: var(--color-text);}
 
-        .icon {
+        > .icon {
             max-width: 28px;
             max-height: 28px;
             border-radius: var(--border-radius-xs);
@@ -128,7 +128,9 @@ article {
     }
 }
 
+// 
 // Responsivo
+// 
 @media screen and (max-width: 1080px) {
     .index-content {
         display: block;
@@ -145,4 +147,9 @@ article {
             #index-about {margin-top: var(--spacing-s);}
         }
     }
+}
+
+// Gráfico responsivo
+#chart-container {
+    canvas {max-width: 100%;}
 }

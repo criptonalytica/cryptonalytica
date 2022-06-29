@@ -1,6 +1,6 @@
 <template>
     <section class="chart-section h100 flex column">
-        <div class="box-title w100 flex middle between">
+        <div class="chart-title box-title w100 flex wrap middle between gap-spacing-2-xs">
             <div class="flex middle">
                 <n-text type="h6" weight="medium">New coins launch</n-text>
                 <n-button size="small" hierarchy="secondary" iconPosition="right" icon="grey-question-circle"></n-button>
@@ -98,6 +98,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+    .chart-title {
+        white-space: nowrap;
+    }
+
     #chart-container div {
         height: 100%;
     }
@@ -109,7 +113,6 @@ export default {
             position: relative;
             z-index: 5;
         }
-
 
         &:before {
             content: '';
