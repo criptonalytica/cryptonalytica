@@ -1,0 +1,3 @@
+modeule.exports = {
+    baseUsl: '/cryptonalytica'
+}
