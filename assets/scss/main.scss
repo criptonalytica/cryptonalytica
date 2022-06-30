@@ -1,0 +1,155 @@
+@import "basics";
+@import "tokens";
+
+body {
+	font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    color: var(--color-grey);
+    background: var(--color-background);
+}
+
+// container
+.container {
+    max-width: 1180px; 
+    margin: auto; 
+    padding: 0 24px;
+    @media screen and (max-width: 1080px) {
+        padding: 0 16px;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+// Default box
+.box, .card {
+    background: white;
+    border: var(--border-grey-1);
+    border-radius: var(--border-radius-xs);
+    max-width: 100%;
+    // padding: var(--spacing-m);
+
+    &.h32, .h32 {
+        padding-left: var(--spacing-l); padding-right: var(--spacing-l);
+        @media screen and (max-width: 1080px) {
+            padding-left: var(--spacing-m); padding-right: var(--spacing-m);
+        }
+    }
+    &.h24, .h24 {padding-left: var(--spacing-m); padding-right: var(--spacing-m);}
+    &.v24, .v24 {padding-top: var(--spacing-m); padding-bottom: var(--spacing-m);}
+    &.v16, .v16 {padding-top: var(--spacing-xs); padding-bottom: var(--spacing-xs);}
+
+    .box-title, .card-title {
+        margin-bottom: var(--spacing-s);
+        .typography {color: var(--color-text);}
+
+        > .icon {
+            max-width: 28px;
+            max-height: 28px;
+            border-radius: var(--border-radius-xs);
+            margin-right: var(--spacing-3-xs);
+        }
+    }
+}
+
+.section-content {
+    + .section-content {padding-top: var(--spacing-5-xl);}
+    .section-title {
+        margin-bottom: var(--spacing-m);
+        color: var(--color-black);
+    }
+}
+
+// 
+// Spacings
+// 
+
+// gap
+.gap-spacing-4-xs {  gap: var(--spacing-4-xs); }
+.gap-spacing-3-xs {  gap: var(--spacing-3-xs); }
+.gap-spacing-2-xs {  gap: var(--spacing-2-xs); }
+.gap-spacing-xs   {    gap: var(--spacing-xs); }
+.gap-spacing-s    {    gap: var(--spacing-s); }
+.gap-spacing-m    {    gap: var(--spacing-m); }
+.gap-spacing-l    {    gap: var(--spacing-l); }
+.gap-spacing-xl   {    gap: var(--spacing-xl); }
+.gap-spacing-2-xl {  gap: var(--spacing-2-xl); }
+.gap-spacing-3-xl {  gap: var(--spacing-3-xl); }
+.gap-spacing-4-xl {  gap: var(--spacing-4-xl); }
+.gap-spacing-5-xl {  gap: var(--spacing-5-xl); }
+.gap-spacing-6-xl {  gap: var(--spacing-6-xl); }
+
+
+// top
+.top-spacing-4-xs {  margin-top: var(--spacing-4-xs); }
+.top-spacing-3-xs {  margin-top: var(--spacing-3-xs); }
+.top-spacing-2-xs {  margin-top: var(--spacing-2-xs); }
+.top-spacing-xs   {    margin-top: var(--spacing-xs); }
+.top-spacing-s    {    margin-top: var(--spacing-s); }
+.top-spacing-m    {    margin-top: var(--spacing-m); }
+.top-spacing-l    {    margin-top: var(--spacing-l); }
+.top-spacing-xl   {    margin-top: var(--spacing-xl); }
+.top-spacing-2-xl {  margin-top: var(--spacing-2-xl); }
+.top-spacing-3-xl {  margin-top: var(--spacing-3-xl); }
+.top-spacing-4-xl {  margin-top: var(--spacing-4-xl); }
+.top-spacing-5-xl {  margin-top: var(--spacing-5-xl); }
+.top-spacing-6-xl {  margin-top: var(--spacing-6-xl); }
+
+article {
+    p + p {margin-top: var(--spacing-s);}
+}
+
+#index-about {
+    article {
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .button {
+        margin-top: var(--spacing-xl);
+        padding-top: var(--spacing-xs);
+        border-top: 1px solid var(--color-grey-1);;
+    }
+}
+
+
+#index-info {
+    max-width: 352px;
+    min-width: 312px;
+    width: 35%;
+}
+
+#new-coins-launch {
+    .box-title {
+        margin-bottom: var(--spacing-xl);
+    }
+}
+
+// 
+// Responsivo
+// 
+@media screen and (max-width: 1080px) {
+    .index-content {
+        display: block;
+    }
+    #index-info {
+        width: 100%; max-width: 100%;
+        flex-direction: row; align-items: stretch;
+        margin-top: var(--spacing-s);
+        #index-about {
+            flex: auto;
+        }
+        @media screen and (max-width: 680px) {
+            display: block;
+            #index-about {margin-top: var(--spacing-s);}
+        }
+    }
+}
+
+// Gráfico responsivo
+#chart-container {
+    canvas {max-width: 100%;}
+}
